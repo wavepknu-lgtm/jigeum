@@ -144,7 +144,7 @@
     }
     .academy-cards { grid-template-columns: minmax(0, 390fr) minmax(0, 390fr) minmax(0, 460fr); gap: clamp(.45rem, .7vw, .75rem); }
     .academy-award-images { grid-template-columns: minmax(0, 1fr) calc(var(--photo-height) * 210 / 297); gap: .55rem; }
-    .academy-certificate { display: block; box-sizing: border-box; height: 100%; aspect-ratio: 210 / 297; border: 2px solid #58088e; background: #8e06ed; }
+    .academy-award-images .academy-certificate { object-fit: contain; background: #fff; }
     @media (max-width: 880px) {
       .academy-cards { grid-template-columns: 1fr; gap: 1.15rem; }
     }
@@ -437,7 +437,7 @@
         <figure class="huss-card">
           <div class="huss-images academy-award-images">
             <img src="academy/graduation.jpg" alt="청년이순신아카데미 수료식 단체 사진">
-            <span class="academy-certificate" role="img" aria-label="상장 첨부 예정"></span>
+            <img class="academy-certificate" src="academy/scholarship-certificate.jpg" alt="제17기 청년이순신아카데미 장학증서">
           </div>
           <figcaption>수료식<br>활동 우수상 수상(장학금 50만원)</figcaption>
         </figure>
