@@ -90,7 +90,7 @@
     .activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.15rem, 2.55vw, 2.6rem); margin: 0; padding: 0; list-style: none; }
     .activity-card { position: relative; display: grid; place-items: center; height: 100%; min-height: 14.95rem; padding: .85rem 2.25rem .85rem 1rem; text-align: center; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.45; font-weight: 650; word-break: keep-all; border: 1px solid #253c3038; border-radius: 24px; box-shadow: 4px 7px 12px #252f2545; color: #fff; text-decoration: none; background: linear-gradient(135deg, #145d50, #13382e); transition: transform 180ms ease-out, box-shadow 180ms ease-out; }
     .activity-grid .activity-card[href="#activities-research"] { background: linear-gradient(135deg, #4f6d44, #274b3b); }
-    .activity-grid .activity-card[href="#activities-vibe-coding"] { background: linear-gradient(135deg, #707b42, #4c581e); }
+    .activity-group[aria-labelledby="activity-vibe-coding-title"] .activity-card { background: linear-gradient(135deg, #707b42, #4c581e); }
     .activity-card::after { content: ""; position: absolute; right: 1.85rem; bottom: 1.38rem; width: .95rem; height: .95rem; border: solid #fff; border-width: 2px 2px 0 0; transform: rotate(45deg); transition: transform 180ms ease-out; }
     .activity-card:focus-visible { outline: 3px solid #145d50; outline-offset: 4px; box-shadow: 0 14px 28px #252f2555; }
     @media (hover: hover) and (pointer: fine) {
@@ -107,7 +107,6 @@
     .activity-stack { display: grid; grid-template-rows: repeat(3, 1fr); gap: .65rem; margin: 0; padding: 0; list-style: none; }
     .activity-stack .activity-card { min-height: 4.55rem; border-radius: 16px; }
     .activity-stack .activity-card::after { top: 50%; right: 1rem; bottom: auto; width: .65rem; height: .65rem; transform: translateY(-50%) rotate(45deg); }
-    .activity-summary { display: grid; gap: .65rem; }
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
       .activity-stack .activity-card:hover { transform: translateY(-4px); }
       .activity-stack .activity-card:hover::after { transform: translate(3px, -50%) rotate(45deg); }
@@ -371,13 +370,11 @@
       </section>
       <section class="activity-group" aria-labelledby="activity-vibe-coding-title">
         <h2 id="activity-vibe-coding-title">바이브코딩</h2>
-        <a class="activity-card" href="#activities-vibe-coding">
-          <span class="activity-summary">
-            <span>영양DB 공모전 장려상</span>
-            <span>캡스톤 대회 참여</span>
-            <span>사회보장데이터 공모전 참여</span>
-          </span>
-        </a>
+        <ul class="activity-stack">
+          <li><a class="activity-card" href="#activities-vibe-coding"><span>영양DB 공모전 장려상<br>뉴트리아일랜드</span></a></li>
+          <li><a class="activity-card" href="#activities-vibe-hackathon"><span>바이브코딩 해커톤<br>오늘뭐입지?</span></a></li>
+          <li><a class="activity-card" href="#activities-vibe-social">사회보장 데이터 공모전 참여</a></li>
+        </ul>
       </section>
       <section class="activity-group" aria-labelledby="activity-variety-title">
         <h2 id="activity-variety-title">최대한 다양한 활동 수행</h2>
