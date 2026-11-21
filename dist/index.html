@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026, 지금. 전공과 연구 여정을 담은 개인 포트폴리오.">
+  <title>2026, 지금 | 소개</title>
+  <style>
+    :root { color-scheme: light; font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; color: #202a23; background: #f3f0e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .top { background: #29362e; border-bottom: 2px solid #bd9f69; color: white; box-shadow: 0 4px 13px #29362e23; }
+    .top-inner { width: min(100% - 3rem, 1290px); margin: auto; min-height: 68px; display: flex; align-items: center; gap: clamp(1.5rem, 9vw, 9rem); }
+    .brand { display: flex; align-items: center; gap: .8rem; white-space: nowrap; font-size: 1.35rem; font-weight: 750; }
+    .brand strong { color: #b4d894; }
+    .brand-icon { display: grid; grid-template-columns: repeat(2, 8px); grid-template-rows: repeat(2, 8px); gap: 3px; padding: 9px; background: #08604d; border-radius: 11px; }
+    .brand-icon i { border: 1.5px solid white; border-radius: 2px; }
+    .top nav { display: grid; grid-template-columns: repeat(4, 1fr); width: min(100%, 508px); padding: 4px; background: #ebe6dd; border-radius: 13px; }
+    .top nav a { text-align: center; white-space: nowrap; font-size: .875rem; font-weight: 700; padding: .43rem .3rem; border-radius: 9px; }
+    .top nav a { color: #595a54; text-decoration: none; }
+    .top nav a[aria-current] { color: white; background: #075e4c; text-decoration: none; box-shadow: 0 2px 6px #064e4340; }
+    .top nav a:focus-visible { outline: 2px solid #205745; outline-offset: -4px; }
+    #intro { width: min(100% - 4rem, 1300px); }
+    #intro { margin: 30px auto 4rem; padding: 32px clamp(1.5rem, 3.75vw, 3.75rem) 40px; background: #fff; border: 1px solid #e9e6df; border-radius: 40px; box-shadow: 4px 6px 9px #272b2542; }
+    .profile-head { padding-bottom: 13px; border-bottom: 1px solid #b7b6ad; }
+    h1 { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0 .65rem; margin: 0; padding: 0 .55rem .15rem; font-size: 1.65rem; line-height: 1.1; background: #aad091; letter-spacing: -.035em; }
+    h1 span { font-size: 1.25rem; color: #35443a; }
+    .majors { display: flex; flex-wrap: wrap; gap: .32rem 1rem; list-style: none; margin: .48rem 0 0; padding: 0 .55rem; color: #596059; font-size: 1rem; word-break: keep-all; }
+    .majors li + li { padding-left: 1rem; border-left: 1px solid #aaa99e; }
+    .profile-body { display: grid; grid-template-columns: clamp(145px, 14vw, 198px) minmax(0, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; margin-top: 31px; }
+    .portrait { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; box-shadow: 3px 4px 8px #29362e48; }
+    .timeline { position: relative; display: grid; gap: 0; padding: 0 0 16px 0; margin: 9px 0 0; list-style: none; }
+    .timeline::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 2px; background: #29362e; }
+    .timeline::after { content: ""; position: absolute; left: -5px; bottom: -3px; border: 6px solid transparent; border-top: 11px solid #29362e; border-bottom: none; }
+    .timeline li { position: relative; display: grid; grid-template-columns: 6.2em minmax(0, 1fr); align-items: baseline; padding: .35rem 0 .95rem 1.65rem; min-height: 55px; font-size: clamp(1rem, 1.25vw, 1.18rem); line-height: 1.45; letter-spacing: -.035em; }
+    .timeline li::before { content: ""; position: absolute; top: calc(.35rem + .725em - 7px); left: -6px; width: 10px; height: 10px; border: 2px solid #29362e; border-radius: 50%; background: white; }
+    .timeline .recent { color: #075e4c; font-weight: 750; }
+    .timeline .recent::before { background: #aad091; }
+    time { white-space: nowrap; }
+    .timeline li span { padding-left: .6em; border-left: 1px solid #9caa9f; word-break: keep-all; overflow-wrap: anywhere; }
+    @media (max-width: 760px) {
+      .top-inner { width: calc(100% - 2rem); flex-direction: column; align-items: stretch; gap: .65rem; padding: .7rem 0; }
+      #intro { width: calc(100% - 2rem); padding: 1.45rem 1.2rem 2rem; margin: 1rem auto 2rem; border-radius: 25px; }
+      .majors { flex-direction: column; }
+      .majors li + li { border: 0; padding: 0; }
+      .profile-body { grid-template-columns: 1fr; margin-top: 1.45rem; }
+      .portrait { width: min(48%, 174px); }
+      .timeline { margin-left: .4rem; }
+      .timeline li { grid-template-columns: 1fr; gap: .1rem; padding-bottom: .9rem; }
+      .timeline li span { border: 0; padding-left: 0; }
+    }
+    [hidden] { display: none !important; }
+    .goals { width: min(84%, 1240px); margin: 2rem auto 4rem; }
+    .goals h1 { font-size: clamp(1.35rem, 1.8vw, 1.65rem); line-height: 1.2; background: linear-gradient(transparent 20%, #aad091 20%); }
+    .goal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.3vw, 2.125rem); margin: 1.35rem clamp(0rem, 2.6vw, 2.5rem) 0; }
+    .goal-column { --heading: #24533a; min-width: 0; position: relative; display: grid; grid-template-rows: auto 1fr; gap: .65rem; }
+    .goal-column:nth-child(2) { --heading: #406e48; }
+    .goal-column.outcomes { --heading: #507742; }
+    .goal-column h2 { display: flex; align-items: center; gap: .55rem; margin: 0; padding: .45rem clamp(.8rem, 1.7vw, 1.55rem); border-radius: 999px; background: var(--heading); color: #fff; font-size: clamp(.95rem, 1.2vw, 1.05rem); line-height: 1.25; word-break: keep-all; }
+    .goal-column h2 svg { flex: none; width: 1.3rem; height: 1.3rem; }
+    .goal-column ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-rows: repeat(3, 1fr); gap: .8rem; }
+    .goal-column li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: .6rem; min-height: 5rem; padding: .55rem .65rem; background: #faf7f0; border: 1px solid #e6e0d5; border-radius: 17px; box-shadow: 0 3px 6px #302c2325; color: #202a23; font-size: .9375rem; line-height: 1.4; font-weight: 600; letter-spacing: -.045em; word-break: keep-all; overflow-wrap: anywhere; }
+    .outcomes li { display: grid; grid-template-columns: 1fr; align-items: stretch; padding: 0; background: #e3efd8; border-color: #5c8757; border-width: 2px; }
+    .goal-column:not(.outcomes) li { box-shadow: none; }
+    .outcome-cta { display: block; width: fit-content; margin-top: .3rem; color: #075e4c; font-size: .875rem; font-weight: 750; text-decoration: underline; text-underline-offset: .14em; }
+    .outcome-link { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .6rem; padding: .55rem .65rem; border-radius: inherit; color: inherit; text-decoration: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .outcomes li { position: relative; transition: transform 180ms ease-out, box-shadow 180ms ease-out; }
+      .outcomes li:hover { z-index: 1; transform: translateY(-8px) scale(1.025); box-shadow: 0 12px 20px -5px #233c2a63; }
+      .outcome-link:hover { background: #d7e9ca; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .outcomes li { transition: none; }
+      .outcomes li:hover { transform: none; }
+    }
+    .outcome-link:focus-visible { outline: 2px solid #075e4c; outline-offset: 2px; }
+    .goal-icon { display: grid; place-items: center; width: clamp(2.25rem, 3.15vw, 2.875rem); aspect-ratio: 1; background: #e8efd6; color: #17563b; border-radius: 14px; }
+    .outcomes .goal-icon { background: #d2e5c4; }
+    .goal-icon svg { width: 62%; height: 62%; }
+    @media (min-width: 961px) {
+      .goal-column:not(:last-child) li:nth-child(2)::after { content: "→"; position: absolute; left: 100%; width: clamp(1.25rem, 2.3vw, 2.125rem); text-align: center; color: #17563b; font-size: 1.65rem; }
+    }
+    @media (max-width: 960px) {
+      .goals { width: min(100% - 2rem, 600px); margin-top: 1.5rem; }
+      .goal-grid { grid-template-columns: 1fr; gap: 1.5rem; margin: 1.25rem 0 0; }
+      .goal-column ul { grid-template-rows: none; gap: .65rem; }
+      .goal-column li { min-height: 4.8rem; }
+    }
+    .activities { width: min(84%, 1160px); margin: clamp(2.5rem, 5vw, 4.8rem) auto 4rem; }
+    .activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.15rem, 2.55vw, 2.6rem); margin: 0; padding: 0; list-style: none; }
+    .activity-card { --card-heading: #bedbd0; position: relative; display: grid; grid-template-rows: auto 1fr; height: 100%; min-height: clamp(16rem, 21vw, 20rem); padding: 1.15rem clamp(1rem, 1.55vw, 1.5rem); border: 1px solid #253c3038; border-radius: 24px; box-shadow: 4px 7px 12px #252f2545; color: #fff; text-decoration: none; background: linear-gradient(135deg, #145d50, #13382e); transition: transform 180ms ease-out, box-shadow 180ms ease-out; }
+    .activity-grid .activity-card[href="#activities-research"] { --card-heading: #d0dfc6; background: linear-gradient(135deg, #4f6d44, #274b3b); }
+    .activity-grid .activity-card[href="#activities-vibe-coding"] { --card-heading: #dfe3ba; background: linear-gradient(135deg, #707b42, #4c581e); }
+    .activity-card::after { content: ""; position: absolute; right: 1.85rem; bottom: 1.38rem; width: .95rem; height: .95rem; border: solid #fff; border-width: 2px 2px 0 0; transform: rotate(45deg); transition: transform 180ms ease-out; }
+    .activity-card:focus-visible { outline: 3px solid #145d50; outline-offset: 4px; box-shadow: 0 14px 28px #252f2555; }
+    @media (hover: hover) and (pointer: fine) {
+      .activity-card:hover { z-index: 1; transform: translateY(-11px) scale(1.035); box-shadow: 0 20px 34px -8px #18271f86, 0 7px 13px #18271f33; }
+      .activity-card:hover::after { transform: translateX(5px) rotate(45deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .activity-card, .activity-card::after { transition: none; }
+      .activity-card:hover { transform: none; }
+      .activity-card:hover::after { transform: rotate(45deg); }
+    }
+    .activity-card h2 { width: 91%; margin: 0; padding-bottom: .5rem; border-bottom: 1px solid #ffffff90; color: var(--card-heading); font-weight: 600; font-size: clamp(1.05rem, 1.45vw, 1.35rem); line-height: 1.3; word-break: keep-all; }
+    .activity-summary { display: grid; align-content: center; gap: 1.15rem; padding: 1rem 0 2rem; text-align: center; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.45; font-weight: 650; word-break: keep-all; }
+    .activity-summary p { margin: 0; }
+    @media (max-width: 760px) {
+      .activities { width: min(100% - 2rem, 520px); margin-top: 1.5rem; }
+      .activity-grid { grid-template-columns: 1fr; }
+      .activity-card { min-height: 13rem; }
+    }
+    .variety-detail { width: min(100% - 4rem, 1240px); margin: 2rem auto 4rem; }
+    .huss-detail { width: min(100% - 4rem, 1340px); }
+    .huss-title span { font: inherit; color: inherit; }
+    .huss-title a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .14em; }
+    .huss-subtitle { margin: .15rem 0 .85rem; padding-left: .55rem; color: #636a61; font-size: clamp(1rem, 1.4vw, 1.3rem); }
+    .huss-cards { display: grid; grid-template-columns: minmax(0, 338fr) minmax(0, 390fr) minmax(0, 570fr); gap: clamp(.75rem, 1.35vw, 1.4rem); --photo-height: clamp(9rem, 13.55vw, 13.75rem); }
+    .huss-card, .huss-summary { background: #f6f5f1; box-shadow: 4px 5px 8px #272c2650; }
+    .huss-card { display: grid; grid-template-rows: auto 1fr; min-width: 0; margin: 0; overflow: hidden; }
+    .huss-images { display: grid; grid-template-columns: minmax(0, 1fr); height: var(--photo-height); background: #f5f3ec; }
+    .huss-images-pair { grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: .4rem; }
+    .huss-images img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+    .huss-images .huss-artwork { object-fit: contain; background: #fff; }
+    .huss-card figcaption, .huss-summary { text-align: center; font-size: clamp(1rem, 1.36vw, 1.24rem); line-height: 1.45; word-break: keep-all; }
+    .huss-card figcaption { display: grid; align-content: center; min-height: 4.8rem; padding: .55rem .7rem; }
+    .huss-summary { margin: 1.1rem 0 0; padding: .85rem 1rem; border-radius: 5px; }
+    @media (max-width: 880px) {
+      .variety-detail.huss-detail { width: min(100% - 2rem, 600px); }
+      .huss-cards { grid-template-columns: 1fr; gap: 1.15rem; --photo-height: clamp(10rem, 48vw, 17rem); }
+      .huss-card figcaption { min-height: 3.5rem; }
+    }
+
+    .variety-nav { margin: 0 0 1rem; }
+    .variety-nav a, .variety-pager a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #b7c8b8; color: #194b38; background: #f8f7f2; text-decoration: none; }
+    .activity-list-link { gap: .5rem; padding: .5rem .85rem; border-radius: 10px; font-weight: 650; }
+    .variety-pager a { position: fixed; z-index: 3; top: 40svh; transform: translateY(-50%); width: 44px; border-radius: 50%; font-size: 1.7rem; line-height: 1; }
+    .variety-pager a[rel="prev"] { left: .25rem; }
+    .variety-pager a[rel="next"] { right: .25rem; }
+    .variety-nav a:hover, .variety-pager a:hover { background: #e3efd8; }
+    .variety-nav a:focus-visible, .variety-pager a:focus-visible, .huss-title a:focus-visible { outline: 2px solid #075e4c; outline-offset: 2px; }
+    @media (max-width: 800px) {
+      .variety-detail { width: calc(100% - 2rem); margin-top: 1.25rem; }
+    }
+    .academy-cards { grid-template-columns: minmax(0, 390fr) minmax(0, 390fr) minmax(0, 460fr); gap: clamp(.45rem, .7vw, .75rem); }
+    .academy-award-images { grid-template-columns: minmax(0, 1fr) calc(var(--photo-height) * 210 / 297); gap: .55rem; }
+    .academy-certificate { display: block; box-sizing: border-box; height: 100%; aspect-ratio: 210 / 297; border: 2px solid #58088e; background: #8e06ed; }
+    @media (max-width: 880px) {
+      .academy-cards { grid-template-columns: 1fr; gap: 1.15rem; }
+    }
+    .club-detail { max-width: 1060px; }
+    .club-cards { --club-card-height: clamp(13.5rem, 15.5vw, 16rem); display: grid; grid-template-columns: minmax(0, 394fr) minmax(0, 380fr) minmax(0, 326fr); gap: clamp(.75rem, 1.2vw, 1.4rem); }
+    .club-image { display: block; min-width: 0; overflow: hidden; cursor: zoom-in; }
+    .club-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .club-image:focus-visible { outline: 3px solid #075e4c; outline-offset: -3px; }
+    .club-contest .club-image { height: calc(var(--club-card-height) - 3.85rem - 6px); padding: .8rem; }
+    .club-podcast { grid-template: 1fr / minmax(0, 1fr) auto; }
+    .club-podcast .club-image { height: calc(var(--club-card-height) - 6px); background: #f6f1ed; }
+    .club-podcast figcaption { writing-mode: vertical-rl; padding: .65rem 1rem; }
+    .club-contests { display: grid; grid-template-rows: 1fr 1fr; gap: .9rem; }
+    .club-progress-card { position: relative; display: grid; place-items: center; min-height: 5.75rem; margin: 0; padding: .75rem 1.8rem 1.05rem 1rem; text-align: center; color: #fff; background: linear-gradient(135deg, #145d50, #13382e); font-size: 1rem; font-weight: 650; word-break: keep-all; }
+    .club-progress-card + .club-progress-card { background: linear-gradient(135deg, #4f6d44, #274b3b); }
+    .club-progress-card::after { content: ""; position: absolute; right: 1.2rem; bottom: 1.1rem; width: .7rem; height: .7rem; border: solid currentColor; border-width: 2px 2px 0 0; transform: rotate(45deg); }
+    @media (max-width: 880px) {
+      .club-cards { grid-template-columns: 1fr; }
+      .club-podcast .club-image { height: clamp(12rem, 53vw, 16rem); }
+    }
+    .variety-detail.research-detail { max-width: 880px; margin-top: .8rem; }
+    .research-layout { display: grid; grid-template-columns: minmax(0, 318fr) minmax(0, 737fr); gap: clamp(.85rem, 1.5vw, 1.3rem); }
+    .research-figure { margin: 0; min-width: 0; overflow: hidden; background: #f6f5f1; }
+    .research-frame { display: block; aspect-ratio: 210 / 297; max-height: 48svh; overflow: hidden; background: #f6f5f1; cursor: zoom-in; }
+    .research-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .research-media { position: relative; }
+    .research-caption { margin: .55rem 0; text-align: center; font-size: .925rem; font-weight: 650; }
+    .research-media button { position: absolute; z-index: 1; top: 50%; transform: translateY(-50%); width: 2.75rem; height: 2.75rem; border: 1px solid #bacabc; border-radius: 50%; background: #f9f8f2; color: #194b38; font: inherit; font-size: 1.5rem; cursor: pointer; }
+    .research-media button:first-of-type { left: .45rem; }
+    .research-media button:last-of-type { right: .45rem; }
+    .research-media button:hover { background: #e3efd8; }
+    .research-media button:focus-visible, .research-frame:focus-visible { outline: 2px solid #075e4c; outline-offset: 2px; }
+    .research-text { display: grid; contain: size; grid-template-rows: minmax(0, 1fr) auto; gap: .6rem; }
+    .research-text article { padding: .55rem .8rem; background: #f6f5f1; font-size: 1rem; line-height: 1.4; word-break: keep-all; }
+    .research-text h2 { margin: 0; font-size: 1.05em; }
+    .research-text p, .research-text ol { margin: .12rem 0 0; }
+    .research-text ol { padding-left: 1.3em; }
+    @media (max-width: 760px) {
+      .research-layout { grid-template-columns: 1fr; }
+      .research-figure { width: min(100%, 340px); margin-inline: auto; }
+    }
+    .research-text .research-background { display: flex; flex-direction: column; padding: 0; overflow: hidden; background: #edeef1; }
+    .research-background h2 { padding: .5rem .8rem 0; }
+    .research-background .activity-photo-trigger { display: grid; flex: 1; grid-template: minmax(0, 1fr) / minmax(0, 1fr); min-height: 0; height: auto; }
+    .research-background img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+    @media (max-width: 760px) {
+      .research-text { contain: none; grid-template-rows: auto auto; }
+      .research-background .activity-photo-trigger { display: block; flex: none; }
+      .research-background img { height: auto; }
+    }
+    .activity-photo-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+    button.activity-photo-trigger { height: 100%; min-width: 0; min-height: 0; }
+    .activity-photo-trigger:focus-visible { outline: 2px solid #075e4c; outline-offset: -3px; }
+    .activity-photo-viewer { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 1rem; border: 0; background: transparent; color: white; cursor: zoom-out; }
+    .activity-photo-viewer[open] { display: grid; place-items: center; }
+    .activity-photo-viewer::backdrop { background: #111a15e8; }
+    .activity-photo-viewer img { display: block; max-width: 100%; max-height: calc(100dvh - 2rem); object-fit: contain; }
+    .activity-photo-viewer button { position: absolute; top: .85rem; right: .85rem; width: 2.75rem; height: 2.75rem; border: 1px solid #ffffff80; border-radius: 50%; background: #18261f; color: #fff; font-size: 1.55rem; cursor: pointer; }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) { width: min(100% - 6.25rem, 1120px); }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) h1 { font-size: 1.45rem; }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-subtitle { font-size: 1rem; }
+    :is(#activities-variety, #activities-variety-academy) .huss-cards { --photo-height: clamp(8rem, 11vw, 11.25rem); gap: clamp(.65rem, 1.15vw, 1.1rem); }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-card, :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-summary, #activities-variety-club .club-progress-card, .research-figure, .research-text article { border: 3px solid #b89654; border-radius: 13px; box-shadow: none; }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-card figcaption, :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-summary { font-size: 1rem; }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-card figcaption { min-height: 3.85rem; padding: .5rem .6rem; }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-summary { margin-top: .85rem; padding: .65rem .85rem; }
+    @media (max-width: 880px) {
+      :is(#activities-variety, #activities-variety-academy, #activities-variety-club) { width: min(100% - 6.25rem, 540px); }
+      :is(#activities-variety, #activities-variety-academy) .huss-cards { --photo-height: clamp(9rem, 43vw, 14rem); }
+    }
+    .nutri-detail { max-width: 1120px; }
+    .nutri-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .63fr) minmax(0, 1fr); align-items: start; gap: 1rem; }
+    .nutri-gallery .research-frame { aspect-ratio: 4 / 3; max-height: 48svh; }
+    .nutri-certificate, .nutri-description { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
+    .nutri-certificate { aspect-ratio: 210 / 297; }
+    .nutri-description { padding: .9rem 1rem; line-height: 1.6; word-break: keep-all; }
+    .nutri-description p { margin: 0; }
+    .nutri-description p + p { margin-top: .75rem; }
+    @media (max-width: 880px) {
+      .nutri-gallery { width: 100%; }
+      .nutri-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+      .nutri-gallery { grid-column: 1 / -1; }
+    }
+    @media (max-width: 500px) {
+      .nutri-layout { grid-template-columns: 1fr; }
+      .nutri-certificate { width: min(65%, 180px); }
+    }
+    .variety-pager a, .research-media button { display: grid; place-items: center; padding: 0; }
+    .variety-pager svg, .research-media button svg { display: block; width: 1.3rem; height: 1.3rem; }
+    .hackathon-detail { max-width: 1080px; }
+    .hackathon-layout { display: grid; grid-template-columns: minmax(0, 1.23fr) minmax(0, 1fr); gap: .9rem; height: clamp(25rem, 59svh, 34rem); }
+    .hackathon-demo, .hackathon-photo, .hackathon-description { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
+    .hackathon-demo { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; overflow: hidden; }
+    .hackathon-viewport { position: relative; min-height: 0; overflow: hidden; background: #fff; }
+    .hackathon-viewport iframe { position: absolute; inset: 0 auto auto 0; display: block; width: 1000px; height: 720px; border: 0; transform: scale(var(--demo-scale, 1)); transform-origin: top left; }
+    .hackathon-aside { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: .75rem; min-height: 0; }
+    .hackathon-description { margin: 0; padding: .55rem .7rem; text-align: center; font-size: .95rem; line-height: 1.4; word-break: keep-all; }
+    .hackathon-demo-footer { margin: 0; padding: .65rem .85rem; text-align: right; }
+    .hackathon-demo-footer a { color: #075e4c; font-weight: 650; text-underline-offset: .16em; }
+    .hackathon-photo { margin: 0; overflow: hidden; }
+    .hackathon-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    :is(.nutri-detail, .hackathon-detail, .social-contest-detail) { width: min(100% - 6.25rem, 1120px); }
+    @media (max-width: 880px) {
+      .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail) { width: min(100% - 6.25rem, 600px); }
+      .hackathon-layout { grid-template-columns: 1fr; height: auto; }
+      .hackathon-viewport { height: clamp(21rem, 52svh, 28rem); }
+      .hackathon-photo img { height: auto; }
+    }
+    .social-contest-detail { max-width: 1080px; }
+    .social-contest-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: .9rem; }
+    .social-contest-card { min-width: 0; overflow: hidden; margin: 0; border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
+    .social-contest-card img { display: block; width: 100%; height: auto; }
+    .social-contest-card .activity-photo-trigger { height: auto; }
+    .social-contest-card ul { margin: 0; padding: .7rem .85rem .85rem 2rem; font-size: 1rem; line-height: 1.55; word-break: keep-all; }
+    .social-contest-card li + li { margin-top: .35rem; }
+    @media (max-width: 880px) {
+      .social-contest-grid { grid-template-columns: 1fr; }
+    }
+    a.club-progress-card { text-decoration: none; }
+    a.club-progress-card:hover { filter: brightness(1.12); }
+    a.club-progress-card:focus-visible { outline: 2px solid #075e4c; outline-offset: 3px; }
+    .poster-viewer { width: min(96%, 1200px); height: 94dvh; max-height: none; padding: 0; border: 1px solid #b89654; border-radius: 13px; background: #f6f5f1; }
+    .poster-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+    .poster-viewer::backdrop { background: #111a15e8; }
+    .poster-tools { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; padding: .5rem; }
+    .poster-tools button, .poster-tools a { min-height: 40px; padding: .4rem .65rem; border: 1px solid #bacabc; border-radius: 8px; background: white; color: #194b38; font: inherit; cursor: pointer; }
+    .poster-tools [data-poster-action="close"] { margin-left: auto; }
+    .poster-scroll { overflow: auto; min-width: 0; min-height: 0; background: #dedfd8; }
+    .poster-scroll img { display: block; max-width: none; height: auto; margin-inline: auto; cursor: zoom-out; }
+    .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail) { margin-top: .8rem; }
+    .meaning-grid { --meaning-gap: clamp(1.25rem, 2.3vw, 2.125rem); display: grid; gap: .8rem; margin: 1.35rem clamp(0rem, 2.6vw, 2.5rem) 0; }
+    .meaning-headings, .meaning-row { display: grid; grid-template-columns: minmax(0, .85fr) repeat(2, minmax(0, 1.1fr)); gap: var(--meaning-gap); }
+    .meaning-card { position: relative; display: grid; align-content: center; min-width: 0; min-height: 5rem; padding: .75rem .9rem; border: 1px solid #e6e0d5; border-radius: 17px; background: #faf7f0; color: #202a23; font-size: .97rem; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+    .meaning-card:last-child { border-color: #cbdcbd; background: #e3efd8; }
+    .meaning-card h2, .meaning-card p { margin: 0; }
+    .meaning-card h2 { font-size: 1em; }
+    .meaning-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .meaning-card:not(:last-child)::after { content: "→" / ""; position: absolute; top: 50%; left: 100%; width: var(--meaning-gap); transform: translateY(-50%); text-align: center; color: #17563b; font-size: 1.35rem; }
+    @media (max-width: 880px) {
+      .meaning-grid { gap: 1.6rem; margin: 1.25rem 0 0; }
+      .meaning-headings { display: none; }
+      .meaning-row { grid-template-columns: 1fr; gap: 1.2rem; }
+      .meaning-card { min-height: 0; }
+      .meaning-label { position: static; width: auto; height: auto; clip-path: none; white-space: normal; margin-bottom: .2rem; color: #17563b; font-size: .85rem; font-weight: 750; }
+      .meaning-card:not(:last-child)::after { content: "↓" / ""; top: 100%; left: 50%; width: auto; height: 1.2rem; transform: translateX(-50%); line-height: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><strong>2026,</strong> 지금</span></div>
+      <nav aria-label="포트폴리오 메뉴">
+        <a href="#intro" aria-current="page">소개</a>
+        <a href="#goals">배경 및 목표</a>
+        <a href="#activities">활동 내용</a>
+        <a href="#meaning">의미</a>
+      </nav>
+    </div>
+  </header>
+  <main id="intro">
+    <div class="profile-head">
+      <h1>지금 <span>202310505</span></h1>
+      <ul class="majors" aria-label="전공">
+        <li>본전공: 사회복지학전공</li>
+        <li>복수전공: 의공학전공</li>
+        <li>부전공: 포용사회융합전공</li>
+      </ul>
+    </div>
+    <div class="profile-body">
+      <img class="portrait" src="portrait.png" alt="지금의 증명사진">
+      <ol class="timeline" aria-label="학업 및 연구 연혁">
+        <li><time datetime="2023">2023년</time><span>국립부경대학교 입학 (행정복지학부)</span></li>
+        <li><time datetime="2024">2024년</time><span>전공 배정 (사회복지학전공)</span></li>
+        <li><time datetime="2025">2025년</time><span>복수전공(의공학전공) 및 부전공(포용사회융합전공) 진입</span></li>
+        <li class="recent"><time datetime="2026-02">2026년 2월</time><span>Computational Biophysics Lab(의공학 소속) 학부연구생 진입</span></li>
+        <li class="recent"><time datetime="2026-09">2026년 9월</time><span>학·석사 연계과정 진입(4차산업융합바이오닉스공학과)</span></li>
+      </ol>
+    </div>
+  </main>
+  <main id="goals" class="goals" aria-labelledby="goals-title" hidden>
+    <h1 id="goals-title">남은 1년, 어떻게 보내야 할까?</h1>
+    <div class="goal-grid">
+      <section class="goal-column">
+        <h2><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4"/><path d="m11 13 8-8m-1 1V3l3-2v3l2 1-3 2h-3"/></svg><span>지금의 고민과 바람 (배경)</span></h2>
+        <ul>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="m9 15 6-6m-5-1 3-3a4 4 0 0 1 6 6l-3 3m-2 2-3 3a4 4 0 0 1-6-6l3-3"/></svg></span><span>사회복지와 의공학을<br>융합할 순 없을까?</span></li>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V5h16v12M4 17l-2 3h20l-2-3H4Z"/></svg></span><span>내가 생각한 것들을, 성과물을<br>타인에게 제한 없이 보여주고 싶어!</span></li>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-4 10 4-10 4-10-4Zm4 2v6c3 3 9 3 12 0v-6m4-2v8"/></svg></span><span>남은 학부생 기간을<br>후회 없이 보내고 싶어!</span></li>
+        </ul>
+      </section>
+      <section class="goal-column">
+        <h2><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v7L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M8 15h8m-5 2h.01m3 2h.01"/></svg><span>구체적인 계획 (목표)</span></h2>
+        <ul>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 0v7L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M8 15h8m-5 2h.01m3 2h.01"/></svg></span><span>의공학 랩실에 소속되면서도<br>사회복지와 융합 가능한 연구주제 선정</span></li>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg></span><span>바이브코딩 공부 &amp; 앱 공모전 출전</span></li>
+          <li><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 4h.01m4 0h.01m4 0h.01m-8 3h.01m4 0h.01m4 0h.01"/></svg></span><span>최대한 다양한 활동을 하고 싶어.<br>기회가 온다면 다 잡을 거야!</span></li>
+        </ul>
+      </section>
+      <section class="goal-column outcomes">
+        <h2><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="m4 22 3-20c5 0 8 4 14 4l-4 4 3 4c-6 0-9-4-14-4"/></svg><span>활동 및 성과</span></h2>
+        <ul>
+          <li><a class="outcome-link" href="#activities-research"><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h20M4 4v14h16V4m-8 14v4m0-4-5 4m5-4 5 4M8 14v-3m4 3V8m4 6v-4"/></svg></span><span>“의료-복지 연계를 위한 데이터 표준화 및 통합 아키텍처 제안” 포스터 발표<span class="outcome-cta" aria-hidden="true">자세히 보기 <span>›</span></span></span></a></li>
+          <li><a class="outcome-link" href="#activities-vibe-coding"><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v5a6 6 0 0 1-12 0V3Zm0 2H3v2c0 3 1 5 5 5m10-7h3v2c0 3-1 5-5 5m-4 2v5m-4 2h8m-4-15 .5 1.5L14 8l-1.5.5L12 10l-.5-1.5L10 8l1.5-.5L12 6Z"/></svg></span><span>’26 2학기 바이브코딩 결과물 4개<br>(공모전 2, 캡스톤 1, 개인용 1)<span class="outcome-cta" aria-hidden="true">자세히 보기 <span>›</span></span></span></a></li>
+          <li><a class="outcome-link" href="#activities-variety"><span class="goal-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M7 21v-3a5 5 0 0 1 10 0v3M2 20v-3a3 3 0 0 1 4-3m16 6v-3a3 3 0 0 0-4-3"/><circle cx="4.5" cy="10" r="2"/><circle cx="19.5" cy="10" r="2"/></svg></span><span>탐구커뮤니티(1학기 팀원, 2학기 팀장)<br>청년이순신아카데미<br>클럽신화(공모전 3회 출전)<span class="outcome-cta" aria-hidden="true">자세히 보기 <span>›</span></span></span></a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <main id="activities" class="activities" aria-label="활동 내용" hidden>
+    <ul class="activity-grid">
+      <li>
+        <a class="activity-card" href="#activities-research" aria-labelledby="activity-research-title">
+          <h2 id="activity-research-title">사회복지 + 의공학</h2>
+          <div class="activity-summary">
+            <p>의료-복지 연계를 위한<br>(1) 데이터 표준화 및<br>(2) 통합 아키텍처 제안<br>포스터 발표</p>
+        </div>
+        </a>
+      </li>
+      <li>
+        <a class="activity-card" href="#activities-vibe-coding" aria-labelledby="activity-vibe-coding-title">
+          <h2 id="activity-vibe-coding-title">바이브코딩</h2>
+          <div class="activity-summary">
+            <p>영양DB 공모전 장려상</p>
+            <p>캡스톤 대회 참여</p>
+            <p>사회보장데이터 공모전 참여</p>
+        </div>
+        </a>
+      </li>
+      <li>
+        <a class="activity-card" href="#activities-variety" aria-labelledby="activity-variety-title">
+          <h2 id="activity-variety-title">최대한 다양한 활동 수행</h2>
+          <div class="activity-summary">
+            <p>탐구커뮤니티 활동</p>
+            <p>청년이순신아카데미</p>
+            <p>클럽신화(공모전 3회 출전)</p>
+        </div>
+        </a>
+      </li>
+    </ul>
+  </main>
+  <main id="activities-variety" class="variety-detail huss-detail" data-parent="#activities" aria-label="탐구커뮤니티" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1 class="huss-title">탐구커뮤니티 <span>(<a href="https://www.instagram.com/huss_wave/" target="_blank" rel="noopener noreferrer">@huss_wave</a>)</span></h1>
+    <p class="huss-subtitle">원하는 활동을 자유롭게, 팀원들과 함께!</p>
+    <div class="variety-stage">
+      <section class="huss-cards" aria-label="탐구커뮤니티 활동 사진">
+        <figure class="huss-card">
+          <div class="huss-images"><img src="huss/team.png" alt="탐구커뮤니티 팀원들이 전시 자료를 들고 함께 찍은 사진"></div>
+          <figcaption>전시회 활동 기획 및 인솔</figcaption>
+        </figure>
+        <figure class="huss-card">
+          <div class="huss-images"><img class="huss-artwork" src="huss/card-news.png" alt="조현병에 관한 오해 OX 퀴즈를 포함한 카드뉴스 모음"></div>
+          <figcaption>소수자 카드뉴스 제작 활동 기획<br>조현병 관련 카드뉴스 제작</figcaption>
+        </figure>
+        <figure class="huss-card">
+          <div class="huss-images huss-images-pair">
+            <img src="huss/booth.png" alt="안내판과 조사 자료를 마련한 야외 부스">
+            <img src="huss/booth-operation.jpg" alt="HUSS 홍보부스 운영 모습">
+          </div>
+          <figcaption>에브리타임 혐오표현 조사(기간: 7~8월)<br>오프라인 실태조사 부스 기획 및 참여</figcaption>
+        </figure>
+      </section>
+      <nav class="variety-pager" aria-label="이전 및 다음 활동">
+        <a href="#activities-variety-club" rel="prev" title="클럽신화" aria-label="이전 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety-academy" rel="next" title="청년이순신아카데미" aria-label="다음 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      </nav>
+    </div>
+    <p class="huss-summary">이외 1학기 탐구커뮤니티 성과발표회 발표자, 에브리타임 혐오표현 조사(기간: 7~8월) 역할을 맡았습니다.</p>
+
+  </main>
+  <main id="activities-variety-academy" class="variety-detail huss-detail" data-parent="#activities" aria-label="제17기 청년이순신아카데미" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>제17기 청년이순신아카데미</h1>
+    <p class="huss-subtitle">고난의 순간에 이순신 장군은 어떻게 생각하고 이겨나갔을까?</p>
+    <div class="variety-stage">
+      <section class="huss-cards academy-cards" aria-label="청년이순신아카데미 활동 사진">
+        <figure class="huss-card">
+          <div class="huss-images"><img src="academy/presentation.jpg" alt="청년이순신아카데미 강의에서 마이크를 들고 발표하는 모습"></div>
+          <figcaption>10회기의 강의에서 3회 발표</figcaption>
+        </figure>
+        <figure class="huss-card">
+          <div class="huss-images"><img src="academy/hansando.jpg" alt="한산도 현장탐방에 참여한 아카데미 단체 사진"></div>
+          <figcaption>한산도 현장탐방</figcaption>
+        </figure>
+        <figure class="huss-card">
+          <div class="huss-images academy-award-images">
+            <img src="academy/graduation.jpg" alt="청년이순신아카데미 수료식 단체 사진">
+            <span class="academy-certificate" role="img" aria-label="상장 첨부 예정"></span>
+          </div>
+          <figcaption>수료식<br>활동 우수상 수상(장학금 50만원)</figcaption>
+        </figure>
+      </section>
+      <nav class="variety-pager" aria-label="이전 및 다음 활동">
+        <a href="#activities-variety" rel="prev" title="탐구커뮤니티" aria-label="이전 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety-club" rel="next" title="클럽신화" aria-label="다음 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      </nav>
+    </div>
+    <p class="huss-summary">이번 년도에는 무력감을 느낄 때마다 저와는 비교도 안 될 고난에 처했던 이순신 장군을 떠올리며<br>사랑 정서 정의 자력 4가지 삶의 원칙으로 더 단단해질 수 있었습니다.</p>
+  </main>
+  <main id="activities-variety-club" class="variety-detail huss-detail club-detail" data-parent="#activities" aria-label="클럽신화" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>클럽신화</h1>
+    <p class="huss-subtitle">신념을 발화하다</p>
+    <div class="variety-stage">
+      <section class="club-cards" aria-label="클럽신화 활동">
+        <figure class="huss-card club-contest">
+          <a class="club-image" href="club/population-contest.png" target="_blank" rel="noopener" aria-label="부산 인구활력 공모전 이미지 원본 새 탭에서 보기">
+            <img src="club/population-contest.png" alt="부산 인구활력 공모전 제안 도식">
+          </a>
+          <figcaption>부산 인구활력 공모전 출전</figcaption>
+        </figure>
+        <figure class="huss-card club-podcast">
+          <a class="club-image" href="club/podcast.png" target="_blank" rel="noopener" aria-label="팟캐스트 참여 사진 원본 크기로 새 탭에서 보기">
+            <img src="club/podcast.png" alt="클럽신화 활동 보고 중 팟캐스트 촬영 사진">
+          </a>
+          <figcaption>팟캐스트 참여</figcaption>
+        </figure>
+        <div class="club-contests">
+          <a class="club-progress-card" href="#activities-vibe-coding"><span>지역사회영양학회 공모전<br>장려상 수상</span></a>
+          <a class="club-progress-card" href="#activities-vibe-social">사회보장 공모전 출전</a>
+        </div>
+      </section>
+      <nav class="variety-pager" aria-label="이전 및 다음 활동">
+        <a href="#activities-variety-academy" rel="prev" title="청년이순신아카데미" aria-label="이전 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety" rel="next" title="탐구커뮤니티" aria-label="다음 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      </nav>
+    </div>
+    <p class="huss-summary">같이 열심히 공모전 준비하던 친구들과<br>꼼꼼히 피드백주신 오영삼 교수님 덕분에 올해 공모전에 3회 출전할 수 있었습니다.</p>
+  </main>
+  <main id="activities-research" class="variety-detail huss-detail research-detail" data-parent="#activities" aria-label="사회복지 + 의공학" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>한국멀티미디어학회 추계학술대회 포스터 발표</h1>
+    <p class="huss-subtitle">사회복지 + 의공학</p>
+    <div class="research-layout">
+      <figure class="research-figure">
+        <div class="research-media">
+          <a class="research-frame" href="research/poster.png" target="_blank" rel="noopener" aria-label="포스터 원본 새 탭에서 보기">
+            <img src="research/poster-preview.png" alt="스마트 돌봄 데이터의 KR-CDI 표준화 및 통합 플랫폼 모델 제안 포스터">
+          </a>
+          <button type="button" data-photo-step="-1" aria-label="이전 사진"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" data-photo-step="1" aria-label="다음 사진"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <figcaption class="research-caption" aria-live="polite">발표 포스터 (1 / 2)</figcaption>
+      </figure>
+      <div class="research-text">
+        <article class="research-background">
+          <h2>제안 배경</h2>
+          <img src="research/proposal-background.png" alt="의사, 요양보호사, 연구자가 분산된 의료·복지 데이터 때문에 겪는 어려움과 통합 플랫폼의 필요성을 보여주는 그림">
+        </article>
+        <article>
+          <h2>주요 제안</h2>
+          <ol>
+            <li>스마트 돌봄 사업의 1차, 2차 데이터의 표준화 제안</li>
+            <li>의료·복지 데이터를 통합 관리하는 플랫폼 아키텍처 제안</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </main>
+  <main id="activities-vibe-coding" class="variety-detail huss-detail nutri-detail" data-parent="#activities" aria-label="바이브코딩" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>2026 국가표준식품성분 DB 활용 아이디어 공모전</h1>
+    <p class="huss-subtitle">아이디어 기획형 | 개인으로 참여 | 웹 앱 제작, 제안서 작성</p>
+    <div class="nutri-layout">
+      <figure class="research-figure nutri-gallery" aria-label="뉴트리아일랜드 발표 슬라이드">
+        <div class="research-media">
+          <a class="research-frame" href="nutri/slide-1.png" target="_blank" rel="noopener">
+            <img src="nutri/slide-1.png" alt="뉴트리아일랜드 발표 자료 첫 번째 슬라이드">
+          </a>
+          <button type="button" data-photo-step="-1" aria-label="이전 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" data-photo-step="1" aria-label="다음 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <figcaption class="research-caption" aria-live="polite">뉴트리아일랜드 (1 / 3)</figcaption>
+      </figure>
+      <div class="nutri-certificate" role="img" aria-label="상장 첨부 예정"></div>
+      <div class="nutri-description">
+        <p>비만 예방을 위한 아동청소년용 웹 앱 테스트버전을 만들고 제출했습니다. 바이브코딩은 Antigravity로, 그림은 gemini로 생성하였습니다.</p>
+        <p>해당 공모전은 개인 출전으로, 오영삼 교수님의 피드백으로 완성하였습니다.</p>
+      </div>
+    </div>
+    <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
+      <a href="#activities-vibe-hackathon" rel="next" title="바이브코딩 해커톤" aria-label="다음 활동, 바이브코딩 해커톤"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#activities-vibe-social" rel="prev" title="사회보장 데이터 경진대회" aria-label="이전 활동, 사회보장 데이터 경진대회"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+    </nav>
+  </main>
+  <main id="activities-vibe-hackathon" class="variety-detail huss-detail hackathon-detail" data-parent="#activities" aria-label="바이브코딩 해커톤" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>바이브코딩 해커톤 대회 출전</h1>
+    <p class="huss-subtitle">웹 앱 ‘오늘뭐입지?’ 프로토타입 개발 및 발표</p>
+    <div class="hackathon-layout">
+      <section class="hackathon-demo" aria-label="오늘뭐입지? 체험">
+        <div class="hackathon-viewport">
+          <iframe data-src="https://today-onq4g7tq9-wave-c4d0.vercel.app/" title="오늘뭐입지? 웹 앱 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        </div>
+        <p class="hackathon-demo-footer"><a href="https://today-onq4g7tq9-wave-c4d0.vercel.app/" target="_blank" rel="noopener noreferrer">앱을 새 탭에서 열기</a></p>
+      </section>
+      <div class="hackathon-aside">
+        <p class="hackathon-description">오늘의 날씨에 따라<br>옷장 안에서 옷을 추천해주는 웹 앱<br>(새 탭에서 여는 걸 추천합니다)</p>
+  <figure class="hackathon-photo">
+          <img src="hackathon/group.jpg" alt="바이브코딩 해커톤 참가자 단체 사진">
+        </figure>
+      </div>
+    </div>
+    <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
+      <a href="#activities-vibe-coding" rel="prev" title="뉴트리아일랜드" aria-label="이전 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-vibe-social" rel="next" title="사회보장 데이터 경진대회" aria-label="다음 활동, 사회보장 데이터 경진대회"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+  </main>
+  <main id="activities-vibe-social" class="variety-detail huss-detail social-contest-detail" data-parent="#activities" aria-label="사회보장 데이터 경진대회" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>2026 사회보장 데이터를 활용한 AI혁신 아이디어 경진대회</h1>
+    <p class="huss-subtitle">팀장을 맡음 | 통계 분석 및 웹 앱 제작, 제안서 검토</p>
+    <section class="social-contest-grid" aria-label="공모전 제안 내용">
+      <figure class="social-contest-card">
+        <img src="social-contest/background.png" alt="노인의 우울과 자살생각을 생활 문항으로 살펴보는 아이디어의 제안 배경">
+      </figure>
+      <article class="social-contest-card">
+        <img src="social-contest/factors.png" alt="변동 가능 요인과 고정 요인을 우울증상 여부 및 자살생각 여부와 연결한 분석 도식">
+        <ul>
+          <li>영향 요인 관련 10문항으로 노인의 우울과 자살생각 정도를 살펴보는 앱을 제안했습니다.</li>
+          <li>로지스틱 회귀분석의 회귀계수와 오즈비를 활용해 우울과 자살생각 정도를 점수화하고, 같은 연령대 집단과 비교한 수치를 제공하는 방식입니다.</li>
+        </ul>
+      </article>
+    </section>
+    <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
+      <a href="#activities-vibe-hackathon" rel="prev" title="바이브코딩 해커톤" aria-label="이전 활동, 바이브코딩 해커톤"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-vibe-coding" rel="next" title="뉴트리아일랜드" aria-label="다음 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+  </main>
+  <main id="meaning" class="goals" aria-labelledby="meaning-title" hidden>
+    <h1 id="meaning-title">그 1년을 보내며 무엇이 달라졌을까?</h1>
+    <div class="meaning-grid">
+      <div class="meaning-headings" aria-hidden="true">
+        <div class="goal-column"><h2>처음의 질문</h2></div>
+        <div class="goal-column"><h2>활동에서 배운 점</h2></div>
+        <div class="goal-column outcomes"><h2>앞으로 이어갈 방향</h2></div>
+      </div>
+      <section class="meaning-row" aria-label="사회복지와 의공학을 어떻게 연결할까?">
+        <div class="meaning-card">
+          <span class="meaning-label">처음의 질문</span>
+          <h2>사회복지와 의공학을 어떻게 연결할까?</h2>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">활동에서 배운 점</span>
+          <p>돌봄 데이터 표준화 포스터를 준비하며, 의료와 돌봄 현장의 정보를 잇는 일이 두 전공의 접점이 될 수 있음을 알게 됐다.</p>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">앞으로 이어갈 방향</span>
+          <p>두 전공을 바탕으로 사람들의 일상과 삶의 질을 높이는 연구를 이어가고 싶다.</p>
+        </div>
+      </section>
+      <section class="meaning-row" aria-label="내가 생각한 것을 어떻게 보여줄까?">
+        <div class="meaning-card">
+          <span class="meaning-label">처음의 질문</span>
+          <h2>내가 생각한 것을 어떻게 보여줄까?</h2>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">활동에서 배운 점</span>
+          <p>공모전 제출용 두 개와 대회용·개인용 웹 앱을 만들며, 아이디어를 다른 사람이 직접 써볼 수 있는 형태로 구현하는 법을 배웠다.</p>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">앞으로 이어갈 방향</span>
+          <p>반복하는 작업을 줄여주는 웹 앱을 기획하고, 어떤 기능까지 구현할 수 있는지 직접 만들어보며 배우고 싶다.</p>
+        </div>
+      </section>
+      <section class="meaning-row" aria-label="남은 학부 생활을 어떻게 보낼까?">
+        <div class="meaning-card">
+          <span class="meaning-label">처음의 질문</span>
+          <h2>남은 학부 생활을 어떻게 보낼까?</h2>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">활동에서 배운 점</span>
+          <p>탐구커뮤니티에서 팀원과 팀장을 모두 맡았다. 팀 활동을 기획하고 이끌면서, 역할을 나누고 서로의 속도를 맞추는 데 더 연습이 필요하다는 걸 깨달았다.</p>
+        </div>
+        <div class="meaning-card">
+          <span class="meaning-label">앞으로 이어갈 방향</span>
+          <p>남은 조별과제에서는 내 기대와 다른 방식이나 속도도 받아들이고, 팀원들과 함께 끝까지 결과를 만들어가고 싶다.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <dialog class="poster-viewer" aria-label="발표 포스터 정밀 확대">
+    <div class="poster-tools">
+      <button type="button" data-poster-action="out" aria-label="축소">−</button>
+      <output aria-live="polite"></output>
+      <button type="button" data-poster-action="in" aria-label="확대">+</button>
+      <button type="button" data-poster-action="fit">화면 맞춤</button>
+      <a href="research/poster.png" target="_blank" rel="noopener">원본 열기</a>
+      <button type="button" data-poster-action="close" autofocus>닫기</button>
+    </div>
+    <div class="poster-scroll" tabindex="0" aria-label="포스터 이미지 스크롤"><img alt="스마트 돌봄 데이터 표준화 및 통합 플랫폼 발표 포스터"></div>
+  </dialog>
+  <dialog class="activity-photo-viewer" aria-label="활동 사진 확대">
+    <img alt="">
+    <button type="button" aria-label="확대 닫기" autofocus>×</button>
+  </dialog>
+  <script>
+    const panels = document.querySelectorAll("main[id]");
+    const links = [...document.querySelectorAll(".top nav a")];
+
+    function showTab() {
+      const detail = [...panels].find(panel => panel.dataset.parent && "#" + panel.id === location.hash);
+      const current = links.find(link => link.hash === (detail?.dataset.parent ?? location.hash)) ?? links[0];
+      for (const link of links) {
+        if (link === current) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      }
+      for (const panel of panels) panel.hidden = detail ? panel !== detail : current.hash !== "#" + panel.id;
+      const demo = detail?.querySelector("iframe[data-src]");
+      if (demo && !demo.hasAttribute("src")) demo.src = demo.dataset.src;
+      document.title = `2026, 지금 | ${detail?.getAttribute("aria-label") ?? current.textContent}`;
+    }
+
+    function setupPhotoGallery(gallery, photos) {
+      const frame = gallery.querySelector(".research-frame");
+      const image = frame.querySelector("img");
+      const caption = gallery.querySelector(".research-caption");
+      let index = 0;
+
+      gallery.querySelectorAll("[data-photo-step]").forEach(button => {
+        button.addEventListener("click", () => {
+          index = (index + Number(button.dataset.photoStep) + photos.length) % photos.length;
+          const photo = photos[index];
+          image.src = photo.src;
+          image.alt = photo.alt;
+          frame.href = photo.original ?? photo.src;
+          frame.setAttribute("aria-label", photo.alt + " 확대");
+          caption.textContent = photo.title + " (" + (index + 1) + " / " + photos.length + ")";
+        });
+      });
+    }
+
+    setupPhotoGallery(document.querySelector("#activities-research .research-figure"), [
+      {src: "research/poster-preview.png", original: "research/poster.png", title: "발표 포스터", alt: "스마트 돌봄 데이터의 KR-CDI 표준화 및 통합 플랫폼 모델 제안 포스터"},
+      {src: "research/session.jpg", title: "학술대회 현장", alt: "한국멀티미디어학회 발표 포스터 옆에서 찍은 현장 사진"}
+    ]);
+    setupPhotoGallery(document.querySelector(".nutri-gallery"), [
+      {src: "nutri/slide-1.png", title: "뉴트리아일랜드", alt: "뉴트리아일랜드 발표 자료 첫 번째 슬라이드"},
+      {src: "nutri/slide-2.png", title: "뉴트리아일랜드", alt: "뉴트리아일랜드 발표 자료 두 번째 슬라이드"},
+      {src: "nutri/slide-5.png", title: "뉴트리아일랜드", alt: "뉴트리아일랜드 발표 자료 세 번째 슬라이드"}
+    ]);
+
+    const photoViewer = document.querySelector(".activity-photo-viewer");
+    const enlargedPhoto = photoViewer.querySelector("img");
+    let photoTrigger;
+    const posterViewer = document.querySelector(".poster-viewer");
+    const posterScroll = posterViewer.querySelector(".poster-scroll");
+    const posterImage = posterScroll.querySelector("img");
+    const posterScale = posterViewer.querySelector("output");
+    let posterWidth = 0;
+
+    function resizePoster(width) {
+      if (!posterImage.naturalWidth) return;
+      posterWidth = Math.round(Math.min(posterImage.naturalWidth, Math.max(200, width)));
+      posterImage.style.width = posterWidth + "px";
+      posterScale.value = Math.round(100 * posterWidth / posterImage.naturalWidth) + "%";
+    }
+
+    function fitPoster() {
+      resizePoster(Math.min(posterScroll.clientWidth, posterScroll.clientHeight * posterImage.naturalWidth / posterImage.naturalHeight));
+      posterScroll.scrollTo(0, 0);
+    }
+
+    posterImage.addEventListener("load", fitPoster);
+    posterImage.addEventListener("click", () => posterViewer.close());
+    posterViewer.addEventListener("click", event => {
+      const action = event.target.dataset.posterAction;
+      if (action === "close") posterViewer.close();
+      if (action === "fit") fitPoster();
+      if (action === "in") resizePoster(posterWidth * 1.55);
+      if (action === "out") resizePoster(posterWidth / 1.55);
+    });
+    posterViewer.addEventListener("close", () => photoTrigger?.focus());
+
+
+    document.querySelectorAll('main[data-parent="#activities"] img').forEach(image => {
+      let trigger = image.closest("a");
+      if (!trigger) {
+        trigger = document.createElement("button");
+        trigger.type = "button";
+        image.before(trigger);
+        trigger.append(image);
+      }
+      trigger.classList.add("activity-photo-trigger");
+      trigger.setAttribute("aria-label", image.alt + " 확대");
+      trigger.addEventListener("click", event => {
+        event.preventDefault();
+        photoTrigger = trigger;
+        if (trigger.getAttribute("href") === "research/poster.png") {
+          posterViewer.showModal();
+          if (!posterImage.hasAttribute("src")) posterImage.src = trigger.href;
+          else if (posterImage.complete) fitPoster();
+          return;
+        }
+        enlargedPhoto.src = trigger instanceof HTMLAnchorElement ? trigger.href : image.src;
+        enlargedPhoto.alt = image.alt;
+        photoViewer.showModal();
+      });
+    });
+
+    photoViewer.addEventListener("click", () => photoViewer.close());
+    photoViewer.addEventListener("close", () => {
+      enlargedPhoto.removeAttribute("src");
+      photoTrigger?.focus();
+    });
+
+    const hackathonViewport = document.querySelector(".hackathon-viewport");
+    const hackathonFrame = hackathonViewport.querySelector("iframe");
+    const desktopDemoWidth = 1000;
+    new ResizeObserver(([entry]) => {
+      const {width, height} = entry.contentRect;
+      if (width === 0 || height === 0) return;
+      const scale = width / desktopDemoWidth;
+      hackathonFrame.style.setProperty("--demo-scale", scale);
+      hackathonFrame.style.height = Math.ceil(height / scale) + "px";
+    }).observe(hackathonViewport);
+    addEventListener("hashchange", showTab);
+    showTab();
+  </script>
+</body>
+</html>
