@@ -225,7 +225,8 @@
     .nutri-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .63fr) minmax(0, 1fr); align-items: start; gap: 1rem; }
     .nutri-gallery .research-frame { aspect-ratio: 4 / 3; max-height: 48svh; }
     .nutri-certificate, .nutri-description { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
-    .nutri-certificate { aspect-ratio: 210 / 297; }
+    .nutri-certificate { display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); aspect-ratio: 210 / 297; overflow: hidden; background: #fff; }
+    .nutri-certificate img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .nutri-description { padding: .9rem 1rem; line-height: 1.6; word-break: keep-all; }
     .nutri-description p { margin: 0; }
     .nutri-description p + p { margin-top: .75rem; }
@@ -532,7 +533,7 @@
         </div>
         <figcaption class="research-caption" aria-live="polite">뉴트리아일랜드 (1 / 3)</figcaption>
       </figure>
-      <div class="nutri-certificate" role="img" aria-label="상장 첨부 예정"></div>
+      <div class="nutri-certificate"><img src="nutri/nutri-island-award.jpg" alt="뉴트리아일랜드 대한지역사회영양학회 공모전 장려상 상장"></div>
       <div class="nutri-description">
         <p>비만 예방을 위한 아동청소년용 웹 앱 테스트버전을 만들고 제출했습니다. 바이브코딩은 Antigravity로, 그림은 gemini로 생성하였습니다.</p>
         <p>해당 공모전은 개인 출전으로, 오영삼 교수님의 피드백으로 완성하였습니다.</p>
