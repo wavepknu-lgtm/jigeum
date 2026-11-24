@@ -237,8 +237,8 @@
     .hackathon-layout { display: grid; grid-template-columns: minmax(0, 1.23fr) minmax(0, 1fr); gap: .9rem; height: clamp(25rem, 59svh, 34rem); }
     .hackathon-demo, .hackathon-photo, .hackathon-description { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
     .hackathon-demo { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; overflow: hidden; }
-    .hackathon-viewport { position: relative; min-height: 0; overflow: hidden; background: #fff; }
-    .hackathon-viewport iframe { position: absolute; inset: 0 auto auto 0; display: block; width: 1000px; height: 720px; border: 0; transform: scale(var(--demo-scale, 1)); transform-origin: top left; }
+    .project-viewport { position: relative; min-height: 0; overflow: hidden; background: #fff; }
+    .project-viewport iframe { position: absolute; inset: 0 auto auto 0; display: block; width: 1000px; height: 720px; border: 0; transform: scale(var(--demo-scale, 1)); transform-origin: top left; }
     .hackathon-aside { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: .75rem; min-height: 0; }
     .hackathon-description { margin: 0; padding: .55rem .7rem; text-align: center; font-size: .95rem; line-height: 1.4; word-break: keep-all; }
     .hackathon-demo-footer { margin: 0; padding: .65rem .85rem; text-align: right; }
@@ -249,7 +249,7 @@
     @media (max-width: 880px) {
       .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 6.25rem, 600px); }
       .hackathon-layout { grid-template-columns: 1fr; height: auto; }
-      .hackathon-viewport { height: clamp(21rem, 52svh, 28rem); }
+      .project-viewport { height: clamp(21rem, 52svh, 28rem); }
       .hackathon-photo img { height: auto; }
     }
     .social-contest-detail { max-width: 1080px; }
@@ -321,6 +321,8 @@
     .vibe-stack > li:not(:first-child) .activity-card { padding: .55rem 1.45rem .55rem .55rem; font-size: clamp(.875rem, 1.15vw, 1rem); overflow-wrap: anywhere; }
     .vibe-stack > li:not(:first-child) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
     .variety-detail.vibe-project-detail { margin-top: .8rem; }
+    .personal-demo { margin-top: 1rem; }
+    .personal-demo .project-viewport { height: clamp(22rem, 64svh, 38rem); }
   </style>
 </head>
 <body>
@@ -574,7 +576,7 @@
     <p class="huss-subtitle">웹 앱 ‘오늘뭐입지?’ 프로토타입 개발 및 발표</p>
     <div class="hackathon-layout">
       <section class="hackathon-demo" aria-label="오늘뭐입지? 체험">
-        <div class="hackathon-viewport">
+        <div class="project-viewport">
           <iframe data-src="https://today-onq4g7tq9-wave-c4d0.vercel.app/" title="오늘뭐입지? 웹 앱 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
         </div>
         <p class="hackathon-demo-footer"><a href="https://today-onq4g7tq9-wave-c4d0.vercel.app/" target="_blank" rel="noopener noreferrer">앱을 새 탭에서 열기</a></p>
@@ -671,6 +673,12 @@
       <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
     </nav>
     <h1>개인 웹페이지 제작</h1>
+    <section class="hackathon-demo personal-demo" aria-label="개인 홈페이지 체험">
+      <div class="project-viewport">
+        <iframe data-src="https://my-homepage-vercel-indol.vercel.app/" title="개인 홈페이지 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+      </div>
+      <p class="hackathon-demo-footer"><a href="https://my-homepage-vercel-indol.vercel.app/" target="_blank" rel="noopener noreferrer">홈페이지 새 탭에서 열기</a></p>
+    </section>
     <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
       <a href="#activities-vibe-social" rel="prev" aria-label="이전 활동, 사회보장 데이터 공모전 참여"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
       <a href="#activities-vibe-exam" rel="next" aria-label="다음 활동, 사회복지사1급 시험대비 웹 앱 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
@@ -811,18 +819,20 @@
       photoTrigger?.focus();
     });
 
-    const hackathonViewport = document.querySelector(".hackathon-viewport");
-    const hackathonFrame = hackathonViewport.querySelector("iframe");
     const desktopDemoWidth = 1000;
-    new ResizeObserver(([entry]) => {
-      const {width, height} = entry.contentRect;
-      if (width === 0 || height === 0) return;
-      const demoWidth = matchMedia("(max-width: 760px)").matches ? width : desktopDemoWidth;
-      const scale = width / demoWidth;
-      hackathonFrame.style.width = demoWidth + "px";
-      hackathonFrame.style.setProperty("--demo-scale", scale);
-      hackathonFrame.style.height = Math.ceil(height / scale) + "px";
-    }).observe(hackathonViewport);
+    const demoResizeObserver = new ResizeObserver(entries => {
+      const narrow = matchMedia("(max-width: 760px)").matches;
+      for (const {target, contentRect: {width, height}} of entries) {
+        if (!width || !height) continue;
+        const frame = target.querySelector("iframe");
+        const demoWidth = narrow ? width : Math.max(width, desktopDemoWidth);
+        const scale = width / demoWidth;
+        frame.style.width = demoWidth + "px";
+        frame.style.setProperty("--demo-scale", scale);
+        frame.style.height = Math.ceil(height / scale) + "px";
+      }
+    });
+    document.querySelectorAll(".project-viewport").forEach(viewport => demoResizeObserver.observe(viewport));
     addEventListener("hashchange", showTab);
     showTab();
   </script>
