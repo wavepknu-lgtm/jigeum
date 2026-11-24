@@ -245,9 +245,9 @@
     .hackathon-demo-footer a { color: #075e4c; font-weight: 650; text-underline-offset: .16em; }
     .hackathon-photo { margin: 0; overflow: hidden; }
     .hackathon-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    :is(.nutri-detail, .hackathon-detail, .social-contest-detail) { width: min(100% - 6.25rem, 1120px); }
+    :is(.nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 6.25rem, 1120px); }
     @media (max-width: 880px) {
-      .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail) { width: min(100% - 6.25rem, 600px); }
+      .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 6.25rem, 600px); }
       .hackathon-layout { grid-template-columns: 1fr; height: auto; }
       .hackathon-viewport { height: clamp(21rem, 52svh, 28rem); }
       .hackathon-photo img { height: auto; }
@@ -273,7 +273,7 @@
     .poster-tools [data-poster-action="close"] { margin-left: auto; }
     .poster-scroll { overflow: auto; min-width: 0; min-height: 0; background: #dedfd8; }
     .poster-scroll img { display: block; max-width: none; height: auto; margin-inline: auto; cursor: zoom-out; }
-    .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail) { margin-top: .8rem; }
+    .variety-detail:is(.nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { margin-top: .8rem; }
     .meaning-grid { --meaning-gap: clamp(1.25rem, 2.3vw, 2.125rem); display: grid; gap: .8rem; margin: 1.35rem clamp(0rem, 2.6vw, 2.5rem) 0; }
     .meaning-headings, .meaning-row { display: grid; grid-template-columns: minmax(0, .85fr) repeat(2, minmax(0, 1.1fr)); gap: var(--meaning-gap); }
     .meaning-card { position: relative; display: grid; align-content: center; min-width: 0; min-height: 5rem; padding: .75rem .9rem; border: 1px solid #e6e0d5; border-radius: 17px; background: #faf7f0; color: #202a23; font-size: .97rem; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
@@ -311,11 +311,16 @@
       .top nav a { display: grid; place-items: center; min-height: 44px; padding: .25rem .15rem; font-size: .8rem; white-space: normal; word-break: keep-all; }
       .activities { width: min(100% - 2rem, 520px); }
       .activity-group > .activity-card { min-height: 7rem; }
-      .variety-detail:is(#activities-variety, #activities-variety-academy, #activities-variety-club, .nutri-detail, .hackathon-detail, .social-contest-detail) { width: min(100% - 2rem, 560px); margin-bottom: 5.5rem; }
+      .variety-detail:is(#activities-variety, #activities-variety-academy, #activities-variety-club, .nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 2rem, 560px); margin-bottom: 5.5rem; }
       .variety-pager a { top: auto; bottom: max(.65rem, env(safe-area-inset-bottom)); transform: none; box-shadow: 0 2px 8px #29362e30; }
       .variety-pager a[rel="prev"] { left: .75rem; }
       .variety-pager a[rel="next"] { right: .75rem; }
     }
+    .vibe-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vibe-stack > li:first-child { grid-column: 1 / -1; }
+    .vibe-stack > li:not(:first-child) .activity-card { padding: .55rem 1.45rem .55rem .55rem; font-size: clamp(.875rem, 1.15vw, 1rem); overflow-wrap: anywhere; }
+    .vibe-stack > li:not(:first-child) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
+    .variety-detail.vibe-project-detail { margin-top: .8rem; }
   </style>
 </head>
 <body>
@@ -396,10 +401,12 @@
       </section>
       <section class="activity-group" aria-labelledby="activity-vibe-coding-title">
         <h2 id="activity-vibe-coding-title">바이브코딩</h2>
-        <ul class="activity-stack">
-          <li><a class="activity-card" href="#activities-vibe-coding"><span>영양DB 공모전 장려상<br>뉴트리아일랜드</span></a></li>
-          <li><a class="activity-card" href="#activities-vibe-hackathon"><span>바이브코딩 해커톤<br>오늘뭐입지?</span></a></li>
+        <ul class="activity-stack vibe-stack">
+          <li><a class="activity-card" href="#activities-vibe-coding"><span>영양DB공모전 장려상<br>뉴트리아일랜드</span></a></li>
+          <li><a class="activity-card" href="#activities-vibe-hackathon"><span>바이브코딩 해커톤<br>오늘 뭐입지?</span></a></li>
           <li><a class="activity-card" href="#activities-vibe-social">사회보장 데이터 공모전 참여</a></li>
+          <li><a class="activity-card" href="#activities-vibe-personal">개인 웹페이지 제작</a></li>
+          <li><a class="activity-card" href="#activities-vibe-exam">사회복지사1급 시험대비 웹 앱 제작</a></li>
         </ul>
       </section>
     </div>
@@ -556,7 +563,7 @@
     </div>
     <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
       <a href="#activities-vibe-hackathon" rel="next" title="바이브코딩 해커톤" aria-label="다음 활동, 바이브코딩 해커톤"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="#activities-vibe-social" rel="prev" title="사회보장 데이터 경진대회" aria-label="이전 활동, 사회보장 데이터 경진대회"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-vibe-exam" rel="prev" title="사회복지사1급 시험대비 웹 앱 제작" aria-label="이전 활동, 사회복지사1급 시험대비 웹 앱 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
     </nav>
   </main>
   <main id="activities-vibe-hackathon" class="variety-detail huss-detail hackathon-detail" data-parent="#activities" aria-label="바이브코딩 해커톤" hidden>
@@ -604,7 +611,7 @@
     </section>
     <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
       <a href="#activities-vibe-hackathon" rel="prev" title="바이브코딩 해커톤" aria-label="이전 활동, 바이브코딩 해커톤"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
-      <a href="#activities-vibe-coding" rel="next" title="뉴트리아일랜드" aria-label="다음 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#activities-vibe-personal" rel="next" title="개인 웹페이지 제작" aria-label="다음 활동, 개인 웹페이지 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
   </main>
   <main id="meaning" class="goals" aria-labelledby="meaning-title" hidden>
@@ -658,6 +665,26 @@
         </div>
       </section>
     </div>
+  </main>
+  <main id="activities-vibe-personal" class="variety-detail huss-detail vibe-project-detail" data-parent="#activities" aria-label="개인 웹페이지 제작" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>개인 웹페이지 제작</h1>
+    <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
+      <a href="#activities-vibe-social" rel="prev" aria-label="이전 활동, 사회보장 데이터 공모전 참여"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-vibe-exam" rel="next" aria-label="다음 활동, 사회복지사1급 시험대비 웹 앱 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+  </main>
+  <main id="activities-vibe-exam" class="variety-detail huss-detail vibe-project-detail" data-parent="#activities" aria-label="사회복지사1급 시험대비 웹 앱 제작" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>사회복지사1급 시험대비 웹 앱 제작</h1>
+    <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
+      <a href="#activities-vibe-personal" rel="prev" aria-label="이전 활동, 개인 웹페이지 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-vibe-coding" rel="next" aria-label="다음 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
   </main>
   <dialog class="poster-viewer" aria-label="발표 포스터 정밀 확대">
     <div class="poster-tools">
