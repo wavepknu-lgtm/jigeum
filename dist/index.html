@@ -322,7 +322,8 @@
     .vibe-stack > li:not(:first-child) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
     .variety-detail.vibe-project-detail { margin-top: .8rem; }
     .personal-demo { margin-top: 1rem; }
-    .personal-demo .project-viewport { height: clamp(22rem, 64svh, 38rem); }
+    .personal-viewport { height: clamp(22rem, 64svh, 38rem); overflow: hidden; background: #fff; }
+    .personal-viewport iframe { display: block; width: 100%; height: 100%; border: 0; }
   </style>
 </head>
 <body>
@@ -674,7 +675,7 @@
     </nav>
     <h1>개인 웹페이지 제작</h1>
     <section class="hackathon-demo personal-demo" aria-label="개인 홈페이지 체험">
-      <div class="project-viewport">
+      <div class="personal-viewport">
         <iframe data-src="https://my-homepage-vercel-indol.vercel.app/" title="개인 홈페이지 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
       </div>
       <p class="hackathon-demo-footer"><a href="https://my-homepage-vercel-indol.vercel.app/" target="_blank" rel="noopener noreferrer">홈페이지 새 탭에서 열기</a></p>
