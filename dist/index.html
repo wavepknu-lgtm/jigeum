@@ -328,6 +328,16 @@
     .personal-reasons h2 { margin: 0 0 .4rem; font-size: 1.1rem; }
     .personal-reasons ol { margin: 0; padding-left: 1.3rem; }
     .personal-reasons li + li { margin-top: .25rem; }
+    .exam-layout { display: grid; grid-template-columns: minmax(0, 390px) minmax(0, 1fr); align-items: start; gap: 1rem; margin-top: 1rem; }
+    .exam-demo .personal-viewport { height: clamp(25rem, 72svh, 42rem); }
+    .exam-credits { margin-top: 0; }
+    .exam-credits dl, .exam-credits dd { margin: 0; }
+    .exam-credits dt { font-weight: 700; }
+    .exam-credits dd + dt { margin-top: .75rem; }
+    @media (max-width: 760px) {
+      .exam-layout { grid-template-columns: minmax(0, 1fr); }
+      .exam-demo { width: min(100%, 390px); margin-inline: auto; }
+    }
   </style>
 </head>
 <body>
@@ -702,6 +712,23 @@
       <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
     </nav>
     <h1>사회복지사1급 시험대비 웹 앱 제작</h1>
+    <div class="exam-layout">
+      <section class="hackathon-demo exam-demo" aria-label="사회복지사 1급 시험대비 웹 앱 체험">
+        <div class="personal-viewport">
+          <iframe data-src="https://social-work-exam-practice.vercel.app/" title="사회복지사 1급 시험대비 웹 앱 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        </div>
+        <p class="hackathon-demo-footer"><a href="https://social-work-exam-practice.vercel.app/" target="_blank" rel="noopener noreferrer">앱을 새 탭에서 열기</a></p>
+      </section>
+      <section class="personal-reasons exam-credits" aria-labelledby="exam-credits-title">
+        <h2 id="exam-credits-title">역할 분담</h2>
+        <dl>
+          <dt>어플 제작 및 선지 1차 전처리</dt>
+          <dd>지금</dd>
+          <dt>정답, 오답 이유 작성 및 선지 2차 오타 검토</dt>
+          <dd>지금, 김하영, 박소연, 박정은, 서태의</dd>
+        </dl>
+      </section>
+    </div>
     <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
       <a href="#activities-vibe-personal" rel="prev" aria-label="이전 활동, 개인 웹페이지 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
       <a href="#activities-vibe-coding" rel="next" aria-label="다음 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
