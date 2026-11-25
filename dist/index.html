@@ -316,10 +316,10 @@
       .variety-pager a[rel="prev"] { left: .75rem; }
       .variety-pager a[rel="next"] { right: .75rem; }
     }
-    .vibe-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .vibe-stack > li:first-child { grid-column: 1 / -1; }
-    .vibe-stack > li:not(:first-child) .activity-card { padding: .55rem 1.45rem .55rem .55rem; font-size: clamp(.875rem, 1.15vw, 1rem); overflow-wrap: anywhere; }
-    .vibe-stack > li:not(:first-child) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
+    :is(.vibe-stack, .variety-stack) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vibe-stack > li:first-child, .variety-stack > li:nth-child(-n+2) { grid-column: 1 / -1; }
+    .vibe-stack > li:not(:first-child) .activity-card, .variety-stack > li:nth-child(n+3) .activity-card { padding: .55rem 1.45rem .55rem .55rem; font-size: clamp(.875rem, 1.15vw, 1rem); overflow-wrap: anywhere; }
+    .vibe-stack > li:not(:first-child) .activity-card::after, .variety-stack > li:nth-child(n+3) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
     .variety-detail.vibe-project-detail { margin-top: .8rem; }
     .personal-demo { margin-top: 1rem; }
     .personal-viewport { height: clamp(22rem, 64svh, 38rem); overflow: hidden; background: #fff; }
@@ -411,10 +411,11 @@
       </section>
       <section class="activity-group" aria-labelledby="activity-variety-title">
         <h2 id="activity-variety-title">최대한 다양한 활동 수행</h2>
-        <ul class="activity-stack">
+        <ul class="activity-stack variety-stack">
           <li><a class="activity-card" href="#activities-variety">탐구커뮤니티 활동</a></li>
-          <li><a class="activity-card" href="#activities-variety-academy">청년이순신아카데미 활동우수상</a></li>
           <li><a class="activity-card" href="#activities-variety-club"><span>클럽신화<br>공모전 3회 출전, 1회 수상</span></a></li>
+          <li><a class="activity-card" href="#activities-variety-academy"><span>청년이순신아카데미<br>활동우수상</span></a></li>
+          <li><a class="activity-card" href="#activities-variety-daeyeon">대연3동 복지공감 네트워크</a></li>
         </ul>
       </section>
       <section class="activity-group" aria-labelledby="activity-vibe-coding-title">
@@ -742,6 +743,12 @@
       <a href="#activities-vibe-personal" rel="prev" aria-label="이전 활동, 개인 웹페이지 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
       <a href="#activities-vibe-coding" rel="next" aria-label="다음 활동, 뉴트리아일랜드"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
+  </main>
+  <main id="activities-variety-daeyeon" class="variety-detail huss-detail" data-parent="#activities" aria-label="대연3동 복지공감 네트워크" hidden>
+    <nav class="variety-nav" aria-label="활동 목록으로 이동">
+      <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
+    </nav>
+    <h1>대연3동 복지공감 네트워크</h1>
   </main>
   <dialog class="poster-viewer" aria-label="발표 포스터 정밀 확대">
     <div class="poster-tools">
