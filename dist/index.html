@@ -318,7 +318,9 @@
     }
     :is(.vibe-stack, .variety-stack) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vibe-stack > li:first-child, .variety-stack > li:nth-child(-n+2) { grid-column: 1 / -1; }
-    .vibe-stack > li:not(:first-child) .activity-card, .variety-stack > li:nth-child(n+3) .activity-card { padding: .55rem 1.45rem .55rem .55rem; font-size: clamp(.875rem, 1.15vw, 1rem); overflow-wrap: anywhere; }
+    .vibe-stack .activity-card { font-size: .9375rem; line-height: 1.38; font-weight: 650; letter-spacing: -.025em; }
+    .vibe-stack > li:not(:first-child) .activity-card, .variety-stack > li:nth-child(n+3) .activity-card { padding: .55rem 1.45rem .55rem .55rem; overflow-wrap: anywhere; }
+    .variety-stack > li:nth-child(n+3) .activity-card { font-size: clamp(.875rem, 1.15vw, 1rem); }
     .vibe-stack > li:not(:first-child) .activity-card::after, .variety-stack > li:nth-child(n+3) .activity-card::after { right: .65rem; width: .5rem; height: .5rem; }
     .variety-detail.vibe-project-detail { margin-top: .8rem; }
     .personal-demo { margin-top: 1rem; }
@@ -438,9 +440,9 @@
         <ul class="activity-stack vibe-stack">
           <li><a class="activity-card" href="#activities-vibe-coding"><span>영양DB공모전 장려상<br>뉴트리아일랜드</span></a></li>
           <li><a class="activity-card" href="#activities-vibe-hackathon"><span>바이브코딩 해커톤<br>오늘 뭐입지?</span></a></li>
-          <li><a class="activity-card" href="#activities-vibe-social">사회보장 데이터 공모전 참여</a></li>
+          <li><a class="activity-card" href="#activities-vibe-social"><span>사회보장 데이터<br>공모전 참여</span></a></li>
           <li><a class="activity-card" href="#activities-vibe-personal">개인 웹페이지 제작</a></li>
-          <li><a class="activity-card" href="#activities-vibe-exam">사회복지사1급 시험대비 웹 앱 제작</a></li>
+          <li><a class="activity-card" href="#activities-vibe-exam"><span>사회복지사1급<br>시험대비 웹 앱 제작</span></a></li>
         </ul>
       </section>
     </div>
