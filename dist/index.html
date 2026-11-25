@@ -201,7 +201,7 @@
     .activity-photo-viewer::backdrop { background: #111a15e8; }
     .activity-photo-viewer img { display: block; max-width: 100%; max-height: calc(100dvh - 2rem); object-fit: contain; }
     .activity-photo-viewer button { position: absolute; top: .85rem; right: .85rem; width: 2.75rem; height: 2.75rem; border: 1px solid #ffffff80; border-radius: 50%; background: #18261f; color: #fff; font-size: 1.55rem; cursor: pointer; }
-    :is(#activities-variety, #activities-variety-academy, #activities-variety-club) { width: min(100% - 6.25rem, 1120px); }
+    :is(#activities-variety, #activities-variety-academy, #activities-variety-club, #activities-variety-daeyeon) { width: min(100% - 6.25rem, 1120px); }
     :is(#activities-variety, #activities-variety-academy, #activities-variety-club) h1 { font-size: 1.45rem; }
     :is(#activities-variety, #activities-variety-academy, #activities-variety-club) .huss-subtitle { font-size: 1rem; }
     :is(#activities-variety, #activities-variety-academy) .huss-cards { --photo-height: clamp(8rem, 11vw, 11.25rem); gap: clamp(.65rem, 1.15vw, 1.1rem); }
@@ -311,7 +311,7 @@
       .top nav a { display: grid; place-items: center; min-height: 44px; padding: .25rem .15rem; font-size: .8rem; white-space: normal; word-break: keep-all; }
       .activities { width: min(100% - 2rem, 520px); }
       .activity-group > .activity-card { min-height: 7rem; }
-      .variety-detail:is(#activities-variety, #activities-variety-academy, #activities-variety-club, .nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 2rem, 560px); margin-bottom: 5.5rem; }
+      .variety-detail:is(#activities-variety, #activities-variety-academy, #activities-variety-club, #activities-variety-daeyeon, .nutri-detail, .hackathon-detail, .social-contest-detail, .vibe-project-detail) { width: min(100% - 2rem, 560px); margin-bottom: 5.5rem; }
       .variety-pager a { top: auto; bottom: max(.65rem, env(safe-area-inset-bottom)); transform: none; box-shadow: 0 2px 8px #29362e30; }
       .variety-pager a[rel="prev"] { left: .75rem; }
       .variety-pager a[rel="next"] { right: .75rem; }
@@ -342,16 +342,13 @@
     .academy-button-name { white-space: nowrap; letter-spacing: -.065em; font-size: .9em; }
     .daeyeon-layout { display: grid; grid-template-columns: minmax(0, .74fr) minmax(0, 1fr) minmax(0, 1.65fr); gap: .95rem; align-items: start; margin-top: 1.25rem; }
     .daeyeon-card { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; box-shadow: none; }
+    .daeyeon-card figcaption { min-height: 0; padding: .4rem .6rem; font-size: .95rem; }
     .daeyeon-photo { height: clamp(10rem, 21vw, 21rem); background: #fff; }
     .daeyeon-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .daeyeon-notes { padding: .85rem 1rem; line-height: 1.5; word-break: keep-all; }
-    .daeyeon-notes-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; }
     .daeyeon-notes h2, .daeyeon-notes h3 { font-size: 1.05em; margin: 0; }
     .daeyeon-notes h3 { margin-top: .7rem; }
     .daeyeon-notes ul { margin: .25rem 0 0; padding-left: 1.25em; }
-    .daeyeon-notes button { border: 1px solid #b7c8b8; color: #194b38; background: #fff; cursor: pointer; }
-    #daeyeon-notes-viewer { width: min(92%, 760px); color: #202a23; font-size: 1.18rem; }
-    #daeyeon-notes-viewer::backdrop { background: #111a15e8; }
     @media (max-width: 880px) {
       .daeyeon-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .daeyeon-layout > .daeyeon-notes { grid-column: 1 / -1; }
@@ -473,8 +470,8 @@
         </figure>
       </section>
       <nav class="variety-pager" aria-label="이전 및 다음 활동">
-        <a href="#activities-variety-club" rel="prev" title="클럽신화" aria-label="이전 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
-        <a href="#activities-variety-academy" rel="next" title="청년이순신아카데미" aria-label="다음 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a href="#activities-variety-daeyeon" rel="prev" title="대연3동 복지공감 네트워크" aria-label="이전 활동, 대연3동 복지공감 네트워크"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety-club" rel="next" title="클럽신화" aria-label="다음 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       </nav>
     </div>
     <p class="huss-summary">이외 1학기 탐구커뮤니티 성과발표회 발표자, 에브리타임 혐오표현 조사(기간: 7~8월) 역할을 맡았습니다.</p>
@@ -505,8 +502,8 @@
         </figure>
       </section>
       <nav class="variety-pager" aria-label="이전 및 다음 활동">
-        <a href="#activities-variety" rel="prev" title="탐구커뮤니티" aria-label="이전 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
-        <a href="#activities-variety-club" rel="next" title="클럽신화" aria-label="다음 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a href="#activities-variety-club" rel="prev" title="클럽신화" aria-label="이전 활동, 클럽신화"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety-daeyeon" rel="next" title="대연3동 복지공감 네트워크" aria-label="다음 활동, 대연3동 복지공감 네트워크"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       </nav>
     </div>
     <p class="huss-summary">이번 년도에는 무력감을 느낄 때마다 저와는 비교도 안 될 고난에 처했던 이순신 장군을 떠올리며<br>사랑 정서 정의 자력 4가지 삶의 원칙으로 더 단단해질 수 있었습니다.</p>
@@ -537,8 +534,8 @@
         </div>
       </section>
       <nav class="variety-pager" aria-label="이전 및 다음 활동">
-        <a href="#activities-variety-academy" rel="prev" title="청년이순신아카데미" aria-label="이전 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
-        <a href="#activities-variety" rel="next" title="탐구커뮤니티" aria-label="다음 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a href="#activities-variety" rel="prev" title="탐구커뮤니티" aria-label="이전 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="#activities-variety-academy" rel="next" title="청년이순신아카데미" aria-label="다음 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       </nav>
     </div>
     <p class="huss-summary">같이 열심히 공모전 준비하던 친구들과<br>꼼꼼히 피드백주신 오영삼 교수님 덕분에 올해 공모전에 3회 출전할 수 있었습니다.</p>
@@ -777,11 +774,8 @@
         <figcaption>활동사진</figcaption>
       </figure>
       <article class="daeyeon-card daeyeon-notes" aria-labelledby="daeyeon-notes-title">
-        <div class="daeyeon-notes-header">
-          <h2 id="daeyeon-notes-title">활동 내용</h2>
-          <button type="button" class="activity-list-link" id="daeyeon-expand">내용 확대</button>
-        </div>
-        <div id="daeyeon-notes-content">
+        <h2 id="daeyeon-notes-title">활동 내용</h2>
+        <div class="daeyeon-notes-content">
           <h3>1. 마을과 대학이 만나는 복지공감 네트워크 회의</h3>
           <ul>
             <li>2차 회의(10월 2일 금요일) 참여</li>
@@ -796,13 +790,10 @@
         </div>
       </article>
     </div>
-    <dialog id="daeyeon-notes-viewer" class="daeyeon-card daeyeon-notes" aria-labelledby="daeyeon-viewer-title">
-      <div class="daeyeon-notes-header">
-        <h2 id="daeyeon-viewer-title">활동 내용</h2>
-        <form method="dialog"><button type="submit" class="activity-list-link">닫기</button></form>
-      </div>
-      <div class="daeyeon-expanded-content"></div>
-    </dialog>
+    <nav class="variety-pager" aria-label="이전 및 다음 활동">
+      <a href="#activities-variety-academy" rel="prev" title="청년이순신아카데미" aria-label="이전 활동, 청년이순신아카데미"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <a href="#activities-variety" rel="next" title="탐구커뮤니티" aria-label="다음 활동, 탐구커뮤니티"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
   </main>
   <dialog class="poster-viewer" aria-label="발표 포스터 정밀 확대">
     <div class="poster-tools">
@@ -943,14 +934,6 @@
       }
     });
     document.querySelectorAll(".project-viewport").forEach(viewport => demoResizeObserver.observe(viewport));
-    const daeyeonNotesViewer = document.querySelector("#daeyeon-notes-viewer");
-    document.querySelector("#daeyeon-expand").addEventListener("click", () => {
-      const notes = document.querySelector("#daeyeon-notes-content");
-      daeyeonNotesViewer.querySelector(".daeyeon-expanded-content").replaceChildren(
-        ...Array.from(notes.children, child => child.cloneNode(true))
-      );
-      daeyeonNotesViewer.showModal();
-    });
     addEventListener("hashchange", showTab);
     showTab();
   </script>
