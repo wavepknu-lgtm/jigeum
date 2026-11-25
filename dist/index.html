@@ -353,13 +353,9 @@
       .daeyeon-layout > .daeyeon-notes { grid-column: 1 / -1; }
       .daeyeon-photo { height: clamp(8rem, 44vw, 17rem); }
     }
-    .social-contest-detail .exam-layout { grid-template-columns: minmax(0, 280px) minmax(0, 480px); }
+    .social-contest-detail .exam-layout { grid-template-columns: minmax(0, 390px) minmax(0, 480px); }
     .social-contest-grid .social-contest-card img { max-height: 15rem; object-fit: contain; background: #fff; }
     .social-contest-grid .social-contest-card ul { padding: .6rem .75rem .75rem 1.8rem; font-size: .925rem; }
-    .naa-bom-launch { display: grid; justify-items: start; gap: .65rem; padding: 1rem; }
-    .naa-bom-launch h2 { margin: 0; font-size: 1.2rem; }
-    .naa-bom-launch a { display: inline-flex; align-items: center; color: #fff; background: #075e4c; text-decoration: none; }
-    .naa-bom-launch a:hover { background: #174638; }
     @media (max-width: 760px) {
       .social-contest-detail .exam-layout { grid-template-columns: minmax(0, 1fr); }
     }
@@ -641,9 +637,11 @@
     <h1>2026 사회보장 데이터를 활용한 AI혁신 아이디어 경진대회</h1>
     <p class="huss-subtitle">팀장을 맡음 | 통계 분석 및 웹 앱 제작, 제안서 검토</p>
     <div class="exam-layout">
-      <section class="social-contest-card naa-bom-launch" aria-labelledby="naa-bom-link-title">
-        <h2 id="naa-bom-link-title">나아봄</h2>
-        <a class="activity-list-link" href="https://naa-bom-app.vercel.app/" target="_blank" rel="noopener noreferrer">앱 새 탭에서 열기</a>
+      <section class="hackathon-demo exam-demo" aria-label="나아봄 웹 앱 체험">
+        <div class="personal-viewport">
+          <iframe data-src="https://naa-bom-app.vercel.app/" title="나아봄 웹 앱 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        </div>
+        <p class="hackathon-demo-footer"><a href="https://naa-bom-app.vercel.app/" target="_blank" rel="noopener noreferrer">앱 새 탭에서 열기</a></p>
       </section>
       <section class="social-contest-grid" aria-label="공모전 제안 내용">
         <figure class="social-contest-card">
