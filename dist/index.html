@@ -770,7 +770,7 @@
         <figcaption>위촉장 내용</figcaption>
       </figure>
       <figure class="huss-card daeyeon-card">
-        <div class="daeyeon-photo"><img src="daeyeon/activities.png" alt="대연3동 말벗 지원사업 방문 활동 사진 네 장" loading="lazy"></div>
+        <div class="daeyeon-photo"><img data-no-zoom src="daeyeon/activities.png" alt="대연3동 말벗 지원사업 방문 활동 사진 네 장" loading="lazy"></div>
         <figcaption>활동사진</figcaption>
       </figure>
       <article class="daeyeon-card daeyeon-notes" aria-labelledby="daeyeon-notes-title">
@@ -889,7 +889,7 @@
     posterViewer.addEventListener("close", () => photoTrigger?.focus());
 
 
-    document.querySelectorAll('main[data-parent="#activities"] img').forEach(image => {
+    document.querySelectorAll('main[data-parent="#activities"] img:not([data-no-zoom])').forEach(image => {
       let trigger = image.closest("a");
       if (!trigger) {
         trigger = document.createElement("button");
