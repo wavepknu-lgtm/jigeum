@@ -340,6 +340,23 @@
       .exam-demo { width: min(100%, 390px); margin-inline: auto; }
     }
     .academy-button-name { white-space: nowrap; letter-spacing: -.065em; font-size: .9em; }
+    .daeyeon-layout { display: grid; grid-template-columns: minmax(0, .74fr) minmax(0, 1fr) minmax(0, 1.65fr); gap: .95rem; align-items: start; margin-top: 1.25rem; }
+    .daeyeon-card { border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; box-shadow: none; }
+    .daeyeon-photo { height: clamp(10rem, 21vw, 21rem); background: #fff; }
+    .daeyeon-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .daeyeon-notes { padding: .85rem 1rem; line-height: 1.5; word-break: keep-all; }
+    .daeyeon-notes-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; }
+    .daeyeon-notes h2, .daeyeon-notes h3 { font-size: 1.05em; margin: 0; }
+    .daeyeon-notes h3 { margin-top: .7rem; }
+    .daeyeon-notes ul { margin: .25rem 0 0; padding-left: 1.25em; }
+    .daeyeon-notes button { border: 1px solid #b7c8b8; color: #194b38; background: #fff; cursor: pointer; }
+    #daeyeon-notes-viewer { width: min(92%, 760px); color: #202a23; font-size: 1.18rem; }
+    #daeyeon-notes-viewer::backdrop { background: #111a15e8; }
+    @media (max-width: 880px) {
+      .daeyeon-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .daeyeon-layout > .daeyeon-notes { grid-column: 1 / -1; }
+      .daeyeon-photo { height: clamp(8rem, 44vw, 17rem); }
+    }
   </style>
 </head>
 <body>
@@ -750,6 +767,42 @@
       <a class="activity-list-link" href="#activities"><span aria-hidden="true">‹</span> 활동 목록</a>
     </nav>
     <h1>대연3동 복지공감 네트워크</h1>
+    <div class="daeyeon-layout">
+      <figure class="huss-card daeyeon-card">
+        <div class="daeyeon-photo"><img src="daeyeon/appointment.jpg" alt="대연3동 남구 명예사회복지공무원 위촉장" loading="lazy"></div>
+        <figcaption>위촉장 내용</figcaption>
+      </figure>
+      <figure class="huss-card daeyeon-card">
+        <div class="daeyeon-photo"><img src="daeyeon/activities.png" alt="대연3동 말벗 지원사업 방문 활동 사진 네 장" loading="lazy"></div>
+        <figcaption>활동사진</figcaption>
+      </figure>
+      <article class="daeyeon-card daeyeon-notes" aria-labelledby="daeyeon-notes-title">
+        <div class="daeyeon-notes-header">
+          <h2 id="daeyeon-notes-title">활동 내용</h2>
+          <button type="button" class="activity-list-link" id="daeyeon-expand">내용 확대</button>
+        </div>
+        <div id="daeyeon-notes-content">
+          <h3>1. 마을과 대학이 만나는 복지공감 네트워크 회의</h3>
+          <ul>
+            <li>2차 회의(10월 2일 금요일) 참여</li>
+            <li>말벗 지원사업 현황과 애로사항 공유, 2027년 신규 복지사업 제안</li>
+          </ul>
+          <h3>2. 홀로 어르신과 대학생 말벗 지원사업</h3>
+          <ul>
+            <li>1~3회차에 조민주, 지금 방문</li>
+            <li>4회차에 김수연, 조민주, 지금 방문</li>
+            <li>이후 어르신의 병원 입원으로 활동 중단</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <dialog id="daeyeon-notes-viewer" class="daeyeon-card daeyeon-notes" aria-labelledby="daeyeon-viewer-title">
+      <div class="daeyeon-notes-header">
+        <h2 id="daeyeon-viewer-title">활동 내용</h2>
+        <form method="dialog"><button type="submit" class="activity-list-link">닫기</button></form>
+      </div>
+      <div class="daeyeon-expanded-content"></div>
+    </dialog>
   </main>
   <dialog class="poster-viewer" aria-label="발표 포스터 정밀 확대">
     <div class="poster-tools">
@@ -890,6 +943,14 @@
       }
     });
     document.querySelectorAll(".project-viewport").forEach(viewport => demoResizeObserver.observe(viewport));
+    const daeyeonNotesViewer = document.querySelector("#daeyeon-notes-viewer");
+    document.querySelector("#daeyeon-expand").addEventListener("click", () => {
+      const notes = document.querySelector("#daeyeon-notes-content");
+      daeyeonNotesViewer.querySelector(".daeyeon-expanded-content").replaceChildren(
+        ...Array.from(notes.children, child => child.cloneNode(true))
+      );
+      daeyeonNotesViewer.showModal();
+    });
     addEventListener("hashchange", showTab);
     showTab();
   </script>
