@@ -253,15 +253,12 @@
       .hackathon-photo img { height: auto; }
     }
     .social-contest-detail { max-width: 1080px; }
-    .social-contest-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: .9rem; }
+    .social-contest-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: .9rem; }
     .social-contest-card { min-width: 0; overflow: hidden; margin: 0; border: 3px solid #b89654; border-radius: 13px; background: #f6f5f1; }
     .social-contest-card img { display: block; width: 100%; height: auto; }
     .social-contest-card .activity-photo-trigger { height: auto; }
     .social-contest-card ul { margin: 0; padding: .7rem .85rem .85rem 2rem; font-size: 1rem; line-height: 1.55; word-break: keep-all; }
     .social-contest-card li + li { margin-top: .35rem; }
-    @media (max-width: 880px) {
-      .social-contest-grid { grid-template-columns: 1fr; }
-    }
     a.club-progress-card { text-decoration: none; }
     a.club-progress-card:hover { filter: brightness(1.12); }
     a.club-progress-card:focus-visible { outline: 2px solid #075e4c; outline-offset: 3px; }
@@ -633,18 +630,26 @@
     </nav>
     <h1>2026 사회보장 데이터를 활용한 AI혁신 아이디어 경진대회</h1>
     <p class="huss-subtitle">팀장을 맡음 | 통계 분석 및 웹 앱 제작, 제안서 검토</p>
-    <section class="social-contest-grid" aria-label="공모전 제안 내용">
-      <figure class="social-contest-card">
-        <img src="social-contest/background.png" alt="노인의 우울과 자살생각을 생활 문항으로 살펴보는 아이디어의 제안 배경">
-      </figure>
-      <article class="social-contest-card">
-        <img src="social-contest/factors.png" alt="변동 가능 요인과 고정 요인을 우울증상 여부 및 자살생각 여부와 연결한 분석 도식">
-        <ul>
-          <li>영향 요인 관련 10문항으로 노인의 우울과 자살생각 정도를 살펴보는 앱을 제안했습니다.</li>
-          <li>로지스틱 회귀분석의 회귀계수와 오즈비를 활용해 우울과 자살생각 정도를 점수화하고, 같은 연령대 집단과 비교한 수치를 제공하는 방식입니다.</li>
-        </ul>
-      </article>
-    </section>
+    <div class="exam-layout">
+      <section class="hackathon-demo exam-demo" aria-label="나아봄 웹 앱 체험">
+        <div class="personal-viewport">
+          <iframe data-src="https://naa-bom-app.vercel.app/" title="나아봄 웹 앱 체험" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        </div>
+        <p class="hackathon-demo-footer"><a href="https://naa-bom-app.vercel.app/" target="_blank" rel="noopener noreferrer">앱을 새 탭에서 열기</a></p>
+      </section>
+      <section class="social-contest-grid" aria-label="공모전 제안 내용">
+        <figure class="social-contest-card">
+          <img src="social-contest/background.png" alt="노인의 우울과 자살생각을 생활 문항으로 살펴보는 아이디어의 제안 배경">
+        </figure>
+        <article class="social-contest-card">
+          <img src="social-contest/factors.png" alt="변동 가능 요인과 고정 요인을 우울증상 여부 및 자살생각 여부와 연결한 분석 도식">
+          <ul>
+            <li>영향 요인 관련 10문항으로 노인의 우울과 자살생각 정도를 살펴보는 앱을 제안했습니다.</li>
+            <li>로지스틱 회귀분석의 회귀계수와 오즈비를 활용해 우울과 자살생각 정도를 점수화하고, 같은 연령대 집단과 비교한 수치를 제공하는 방식입니다.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
     <nav class="variety-pager" aria-label="이전 및 다음 바이브코딩 활동">
       <a href="#activities-vibe-hackathon" rel="prev" title="바이브코딩 해커톤" aria-label="이전 활동, 바이브코딩 해커톤"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
       <a href="#activities-vibe-personal" rel="next" title="개인 웹페이지 제작" aria-label="다음 활동, 개인 웹페이지 제작"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
